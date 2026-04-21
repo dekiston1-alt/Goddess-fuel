@@ -64,7 +64,7 @@ p{font-weight:300;line-height:1.75;}
 .gap-16{gap:16px;}
 
 /* ═══ BUTTONS ═══ */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:14px 32px;border-radius:50px;font-size:14px;font-weight:500;border:none;transition:all .25s ease;cursor:pointer;letter-spacing:.3px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:14px 32px;border-radius:50px;font-size:14px;font-weight:500;border:none;transition:all .25s ease;cursor:pointer;}
 .btn-primary{background:var(--sage-5);color:#fff;box-shadow:var(--shadow-md);}
 .btn-primary:hover{background:var(--sage-4);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
 .btn-outline{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.35);}
@@ -144,7 +144,7 @@ p{font-weight:300;line-height:1.75;}
   display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;
 }
 .hero-content{max-width:900px;margin:0 auto;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:8px 18px;font-size:11px;letter-spacing:2px;color:var(--sage-3);text-transform:uppercase;font-weight:300;margin-bottom:28px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:8px 18px;font-size:12px;color:rgba(255,255,255,.7);font-weight:300;margin-bottom:24px;}
 .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--sage-3);animation:blink 2s ease infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 .hero-h1{color:#fff;margin-bottom:24px;}
@@ -181,7 +181,7 @@ p{font-weight:300;line-height:1.75;}
 .steps{background:var(--cream-1);}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1000px;margin:0 auto;}
 .step{text-align:center;}
-.step-num{width:52px;height:52px;border-radius:50%;background:var(--sage-5);color:#fff;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:var(--shadow-md);}
+.step-num{width:52px;height:52px;border-radius:50%;background:var(--sage-5);color:#fff;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
 .step-title{font-size:14px;font-weight:600;color:var(--sage-9);margin-bottom:8px;}
 .step-desc{font-size:12.5px;color:rgba(26,53,23,.6);font-weight:300;line-height:1.7;}
 
@@ -272,20 +272,18 @@ footer{background:var(--charcoal);padding:48px 24px 32px;}
 </head>
 <body>
 
-<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-inner">
-    <span>🌿 FREE SHIPPING ON AMAZON &nbsp;·&nbsp; ZERO PESTICIDES &nbsp;·&nbsp; 5× FASTER GROWTH &nbsp;·&nbsp; SMART-TECH AUTOMATION &nbsp;·&nbsp; ALL AGES WELCOME &nbsp;·&nbsp; BEGINNER FRIENDLY &nbsp;·&nbsp; HARVEST IN DAYS &nbsp;·&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>🌿 FREE SHIPPING ON AMAZON &nbsp;·&nbsp; ZERO PESTICIDES &nbsp;·&nbsp; 5× FASTER GROWTH &nbsp;·&nbsp; SMART-TECH AUTOMATION &nbsp;·&nbsp; ALL AGES WELCOME &nbsp;·&nbsp; BEGINNER FRIENDLY &nbsp;·&nbsp; HARVEST IN DAYS &nbsp;·&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>🌿 FREE SHIPPING ON AMAZON &nbsp;·&nbsp; ZERO PESTICIDES &nbsp;·&nbsp; 5× FASTER GROWTH &nbsp;·&nbsp; SMART-TECH AUTOMATION &nbsp;·&nbsp; ALL AGES WELCOME &nbsp;·&nbsp; BEGINNER FRIENDLY</span>
+    <span>🌿 FREE SHIPPING ON AMAZON &nbsp;·&nbsp; ZERO PESTICIDES &nbsp;·&nbsp; 5× FASTER GROWTH &nbsp;·&nbsp; SMART-TECH AUTOMATION &nbsp;·&nbsp; ALL AGES WELCOME &nbsp;·&nbsp; BEGINNER FRIENDLY</span>
   </div>
 </div>
 
-<!-- NAV -->
 <header id="nav">
   <div class="nav-inner">
     <div class="nav-brand">
       <div class="nav-logo float">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-4-7-8-7z"/><circle cx="12" cy="9" r="2"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-4-7-8-7z"/><circle cx="12" cy="9" r="2" fill="white"/></svg>
       </div>
       <div>
         <div class="nav-name">Goddess Fuel <em>Wellness</em></div>
@@ -296,360 +294,212 @@ footer{background:var(--charcoal);padding:48px 24px 32px;}
       <a href="#benefits">Benefits</a>
       <a href="#products">Products</a>
       <a href="#how-it-works">How It Works</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
     </nav>
     <a href="#products" class="btn btn-primary" style="padding:11px 24px;font-size:13px;">Shop Now →</a>
   </div>
 </header>
 
-<!-- HERO -->
 <section id="home">
   <div class="hero-content">
     <div class="hero-eyebrow fade-in"><span class="hero-dot"></span>Smart Indoor Gardens · Home Hydroponics</div>
     <h1 class="hero-h1 fade-in d1">Elevate Your Space.<br/><em>Grow Your Wellness.</em></h1>
     <p class="hero-sub fade-in d2">Zero effort. Zero pesticides. Fresh herbs and greens growing beautifully in your home — fully automated, endlessly nourishing, perfect for every lifestyle.</p>
+    
     <div class="hero-ctas fade-in d3">
-      <a href="#products" class="btn btn-primary pulse">Shop the Collection →</a>
-      <a href="#how-it-works" class="btn btn-outline">See How It Works ↓</a>
+      <a href="#products" class="btn btn-primary pulse">View Top Systems</a>
+      <a href="#how-it-works" class="btn btn-outline">Learn How It Works</a>
     </div>
+    
     <div class="hero-bar fade-in d4">
-      <span><span class="stars" style="font-size:14px;">★★★★★</span> 4.9 / 5</span>
-      <span class="hero-divider"></span>
-      <span>🌿 10,000+ Happy Growers</span>
-      <span class="hero-divider"></span>
-      <span>✅ Amazon Verified</span>
-      <span class="hero-divider"></span>
-      <span>🌍 All Ages Welcome</span>
+      <div class="flex gap-8"><span class="stars">★★★★★</span> 4.9/5 Average Rating</div>
+      <div class="hero-divider"></div>
+      <div class="flex gap-8">✓ Prime Delivery Available</div>
+      <div class="hero-divider"></div>
+      <div class="flex gap-8">✓ Beginner Friendly</div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
 <div class="stats-bar">
   <div class="stats-grid">
-    <div class="reveal"><div class="stat-num">5×</div><div class="stat-label">Faster Than Soil</div></div>
-    <div class="reveal"><div class="stat-num">0</div><div class="stat-label">Pesticides. Ever.</div></div>
-    <div class="reveal"><div class="stat-num">24/7</div><div class="stat-label">Automated Care</div></div>
-    <div class="reveal"><div class="stat-num">4.9★</div><div class="stat-label">Avg. Rating</div></div>
+    <div>
+      <div class="stat-num">5x</div>
+      <div class="stat-label">Faster Growth</div>
+    </div>
+    <div>
+      <div class="stat-num">0%</div>
+      <div class="stat-label">Pesticides</div>
+    </div>
+    <div>
+      <div class="stat-num">365</div>
+      <div class="stat-label">Days of Harvest</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Automated</div>
+    </div>
   </div>
 </div>
 
-<!-- BENEFITS -->
 <section id="benefits" class="section benefits">
   <div class="container">
     <div class="section-header text-center reveal">
-      <div class="section-tag">Why Goddess Fuel</div>
-      <h2 class="section-title">Grown with <em>intention.</em></h2>
-      <p class="section-sub">Smart technology meets clean living — your indoor garden practically runs itself.</p>
+      <div class="section-tag">Why Choose Hydroponics?</div>
+      <h2 class="section-title">Nature's Best, <em>Perfected.</em></h2>
+      <p class="section-sub">Experience the future of home gardening with systems designed for minimal maintenance and maximum yield.</p>
     </div>
     <div class="grid-3">
-      <div class="benefit-card reveal">
-        <div class="benefit-icon light">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3a7030" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <h3>5× Faster Growth</h3>
-        <p style="font-size:13.5px;color:rgba(26,53,23,.65);margin-top:10px;">Hydroponic nutrient delivery reaches roots directly — plants grow up to five times faster than soil, with bigger harvests every time.</p>
-        <div class="progress-wrap">
-          <div class="progress-label sage">Growth Rate vs Soil</div>
-          <div class="progress-track sage"><div class="progress-fill" data-w="85%"></div></div>
-        </div>
+      <div class="benefit-card reveal d1">
+        <div class="benefit-icon light">🌱</div>
+        <h3>Effortless Growth</h3>
+        <p>Smart sensors manage water and light cycles automatically. Just add water and nutrients when notified.</p>
       </div>
-      <div class="benefit-card dark reveal">
-        <div class="benefit-icon dark-bg">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#9dc494" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <h3 style="color:#fff;">Zero Pesticides</h3>
-        <p style="font-size:13.5px;color:rgba(157,196,148,.75);margin-top:10px;">Every leaf is 100% chemical-free. Snip and eat straight from your garden — no washing, no worry, no toxins for your family.</p>
-        <div class="progress-wrap">
-          <div class="progress-label dark">Chemical Free Rating</div>
-          <div class="progress-track dark"><div class="progress-fill" data-w="100%"></div></div>
-        </div>
+      <div class="benefit-card dark reveal d2">
+        <div class="benefit-icon dark-bg">💡</div>
+        <h3 style="color:#fff;">Advanced LED Tech</h3>
+        <p style="color:rgba(157,196,148,.75);">Full-spectrum lighting mimics natural sunlight, ensuring your plants thrive year-round regardless of weather.</p>
       </div>
-      <div class="benefit-card reveal">
-        <div class="benefit-icon light">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3a7030" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg>
-        </div>
-        <h3>Smart-Tech Care</h3>
-        <p style="font-size:13.5px;color:rgba(26,53,23,.65);margin-top:10px;">Built-in sensors, automated LED cycles, and smart watering reminders. Your garden runs on autopilot so you can focus on living.</p>
-        <div class="progress-wrap">
-          <div class="progress-label sage">Automation Level</div>
-          <div class="progress-track sage"><div class="progress-fill" data-w="92%"></div></div>
-        </div>
+      <div class="benefit-card reveal d3">
+        <div class="benefit-icon light">🥗</div>
+        <h3>Farm to Table</h3>
+        <p>Harvest fresh, nutrient-dense greens directly from your living room to your plate in seconds.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section id="how-it-works" class="section steps">
   <div class="container">
     <div class="section-header text-center reveal">
-      <div class="section-tag">Simple Process</div>
-      <h2 class="section-title">From box to <em>harvest in days.</em></h2>
+      <div class="section-tag">The Process</div>
+      <h2 class="section-title">Grow in <em>Three Steps</em></h2>
     </div>
     <div class="steps-grid">
-      <div class="step reveal">
+      <div class="step reveal d1">
         <div class="step-num">1</div>
-        <div class="step-title">Order on Amazon</div>
-        <div class="step-desc">Click any product link and order directly through Amazon with fast, secure checkout and easy returns.</div>
+        <div class="step-title">Setup System</div>
+        <div class="step-desc">Plug in your smart garden and fill the reservoir with water and nutrients.</div>
       </div>
-      <div class="step reveal">
+      <div class="step reveal d2">
         <div class="step-num">2</div>
-        <div class="step-title">Set Up in Minutes</div>
-        <div class="step-desc">No tools needed. Fill the reservoir, plug in, and drop in your seed pods. Complete setup in under 10 minutes.</div>
+        <div class="step-title">Insert Pods</div>
+        <div class="step-desc">Place the pre-seeded plant pods into the designated slots.</div>
       </div>
-      <div class="step reveal">
+      <div class="step reveal d3">
         <div class="step-num">3</div>
-        <div class="step-title">Smart Tech Takes Over</div>
-        <div class="step-desc">Automated lighting, watering cycles, and growth sensors handle everything automatically — 24 hours a day.</div>
+        <div class="step-title">Let It Grow</div>
+        <div class="step-desc">The system automates light and water. Watch your plants flourish.</div>
       </div>
-      <div class="step reveal">
+      <div class="step reveal d4">
         <div class="step-num">4</div>
-        <div class="step-title">Harvest & Enjoy</div>
-        <div class="step-desc">Fresh herbs and greens in as little as 7 days. Snip, eat, and regrow endlessly from the same pods.</div>
+        <div class="step-title">Harvest</div>
+        <div class="step-desc">Enjoy fresh, organic greens and herbs directly from your indoor garden.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
 <section id="products" class="section products">
   <div class="container">
     <div class="section-header text-center reveal">
-      <div class="section-tag">The Collection</div>
-      <h2 class="section-title">Your <em>green sanctuary</em> starts here.</h2>
-      <p class="section-sub">Three curated smart gardens chosen for beauty, performance, and effortless daily living.</p>
+      <div class="section-tag">Shop Systems</div>
+      <h2 class="section-title">Select Your <em>Garden</em></h2>
+      <p class="section-sub">Find the perfect smart hydroponics system for your space. Fulfillment and shipping handled securely by Amazon.</p>
     </div>
     <div class="grid-3">
-
-      <!-- Product 1 -->
-      <div class="card reveal">
+      <div class="card reveal d1">
         <div class="card-img-wrap">
-          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&auto=format&fit=crop');"></div>
-          <span class="pill-img pill-img-tl">🌿 Best Seller</span>
-          <span class="pill-img pill-img-br">4.9 ★★★★★</span>
+          <div class="pill pill-img pill-img-tl">Best Seller</div>
         </div>
         <div class="card-body">
-          <div class="card-tag" style="color:var(--sage-5);">For the Home Chef</div>
-          <h3>Chef's Dream Herb Garden</h3>
-          <p style="font-size:13px;color:rgba(26,53,23,.65);margin-top:10px;">Grow fresh basil, mint, thyme, and rosemary year-round. Your kitchen transforms into a 5-star culinary sanctuary with zero effort.</p>
+          <div class="card-tag">Starter System</div>
+          <h3>The Compact Oasis</h3>
           <ul class="card-checklist">
-            <li><span class="check-icon">✓</span>Grows 6 herb varieties simultaneously</li>
-            <li><span class="check-icon">✓</span>Compact design fits any countertop</li>
-            <li><span class="check-icon">✓</span>Automated LED grow light included</li>
+            <li><span class="check-icon">✓</span> 3-Pod Growth Capacity</li>
+            <li><span class="check-icon">✓</span> 10W LED Grow Light</li>
+            <li><span class="check-icon">✓</span> Ideal for small countertops</li>
           </ul>
-          <!-- REPLACE WITH YOUR AMAZON AFFILIATE LINK -->
-          <a href="https://amzn.to/4se5KWZ" target="_blank" rel="noopener" class="btn btn-primary btn-full">Check Price on Amazon →</a>
+          <a href="YOUR_AMAZON_LINK_HERE" class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">View on Amazon</a>
         </div>
       </div>
-
-      <!-- Product 2 — Featured -->
-      <div class="card card-dark product-featured reveal">
+      
+      <div class="card product-featured reveal d2">
         <div class="card-img-wrap">
-          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e17?w=600&auto=format&fit=crop');"></div>
-          <span class="pill-img pill-img-tl" style="background:#b87a2e;">⭐ Editor's Pick</span>
-          <span class="pill-img pill-img-br">4.9 ★★★★★</span>
+           <div class="pill pill-img pill-img-tl" style="background:var(--gold);">Premium Choice</div>
         </div>
         <div class="card-body">
-          <div class="card-tag">For the Wellness Goddess</div>
-          <h3>Empowered Wellness Greenery</h3>
-          <p style="font-size:13px;margin-top:10px;">Kale, arugula, wheatgrass, and microgreens — a daily ritual of nourishment and self-care, grown beautifully on your countertop.</p>
-          <ul class="card-checklist light">
-            <li><span class="check-icon light">✓</span>Nutrient-dense greens in 7–14 days</li>
-            <li><span class="check-icon light">✓</span>Built-in smart watering system</li>
-            <li><span class="check-icon light">✓</span>App-connected growth monitoring</li>
-          </ul>
-          <!-- REPLACE WITH YOUR AMAZON AFFILIATE LINK -->
-          <a href="https://amzn.to/4vl8iWi" target="_blank" rel="noopener" class="btn btn-white btn-full">Check Price on Amazon →</a>
-        </div>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="card reveal">
-        <div class="card-img-wrap">
-          <div class="img" style="background-image:url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=600&auto=format&fit=crop');"></div>
-          <span class="pill-img pill-img-tl">🚀 High Yield</span>
-          <span class="pill-img pill-img-br">4.8 ★★★★★</span>
-        </div>
-        <div class="card-body">
-          <div class="card-tag" style="color:var(--sage-5);">For the Abundance Seeker</div>
-          <h3>Macro Abundance Hydroponics</h3>
-          <p style="font-size:13px;color:rgba(26,53,23,.65);margin-top:10px;">A full-scale smart hydroponic system for maximum harvest. Lettuce, spinach, herbs — grow more, spend less, live abundantly.</p>
+          <div class="card-tag">Family System</div>
+          <h3>The Harvest Elite</h3>
           <ul class="card-checklist">
-            <li><span class="check-icon">✓</span>20-pod high-capacity system</li>
-            <li><span class="check-icon">✓</span>Full-spectrum grow lights included</li>
-            <li><span class="check-icon">✓</span>30% quieter pump technology</li>
+            <li><span class="check-icon">✓</span> 6-Pod Growth Capacity</li>
+            <li><span class="check-icon">✓</span> 20W LED Grow Light</li>
+            <li><span class="check-icon">✓</span> Digital touch panel</li>
           </ul>
-          <!-- REPLACE WITH YOUR AMAZON AFFILIATE LINK -->
-          <a href="https://amzn.to/4sQEMpz" target="_blank" rel="noopener" class="btn btn-primary btn-full">Check Price on Amazon →</a>
+          <a href="YOUR_AMAZON_LINK_HERE" class="btn btn-primary btn-full pulse" target="_blank" rel="noopener noreferrer">View on Amazon</a>
         </div>
       </div>
-
-    </div>
-    <div class="trust-bar reveal">
-      <span>🔒 Secure Amazon Checkout</span>
-      <span>↩️ Easy Amazon Returns</span>
-      <span>🚚 Fast Amazon Shipping</span>
-      <span>✅ Verified Affiliate Links</span>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews" class="section reviews">
-  <div class="container">
-    <div class="section-header text-center reveal">
-      <div class="section-tag light">Real Results</div>
-      <h2 class="section-title light" style="color:#fff;">The goddesses <em style="color:var(--sage-3);">have spoken.</em></h2>
-    </div>
-    <div class="grid-2">
-      <div class="review-card reveal">
-        <div class="stars">★★★★★</div>
-        <p class="review-quote">"This completely transformed my kitchen. I wake up every morning, snip fresh basil for my eggs, and feel like I'm living in a luxury wellness retreat. I've saved over $80 a month on groceries and genuinely look forward to cooking now."</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div class="reviewer-avatar">M</div>
-          <div><div class="reviewer-name">Maya R.</div><div class="reviewer-source">Verified Amazon Purchase · Chef's Dream Herb Garden</div></div>
-        </div>
-      </div>
-      <div class="review-card reveal">
-        <div class="stars">★★★★★</div>
-        <p class="review-quote">"I've tried every wellness trend out there but growing my own greens at home has been the most impactful change I've ever made. My skin is glowing, my energy is through the roof, and my apartment looks absolutely stunning."</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div class="reviewer-avatar">T</div>
-          <div><div class="reviewer-name">Tanisha W.</div><div class="reviewer-source">Verified Amazon Purchase · Empowered Wellness Greenery</div></div>
-        </div>
-      </div>
-      <div class="review-card reveal">
-        <div class="stars">★★★★★</div>
-        <p class="review-quote">"I'm 71 years old and was completely skeptical. Six weeks later I'm harvesting lettuce every single day. The smart lighting does everything automatically. I haven't bought salad from the store in two months. My grandkids are obsessed."</p>
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div class="reviewer-avatar">J</div>
-          <div><div class="reviewer-name">Janelle P.</div><div class="reviewer-source">Verified Amazon Purchase · Macro Abundance Hydroponics</div></div>
-        </div>
-      </div>
-      <div class="stats-card reveal">
-        <h3 style="color:#fff;font-style:italic;">By the numbers.</h3>
-        <div class="stat-box-grid">
-          <div><div class="stat-box-num">10K+</div><div class="stat-box-label">Happy home growers</div></div>
-          <div><div class="stat-box-num">4.9★</div><div class="stat-box-label">Average rating</div></div>
-          <div><div class="stat-box-num">5×</div><div class="stat-box-label">Faster than soil</div></div>
-          <div><div class="stat-box-num">$80+</div><div class="stat-box-label">Avg. monthly savings</div></div>
+      
+      <div class="card reveal d3">
+        <div class="card-img-wrap"></div>
+        <div class="card-body">
+          <div class="card-tag">Pro System</div>
+          <h3>The Botanical Tower</h3>
+          <ul class="card-checklist">
+            <li><span class="check-icon">✓</span> 12-Pod Growth Capacity</li>
+            <li><span class="check-icon">✓</span> Dual 36W LED Lights</li>
+            <li><span class="check-icon">✓</span> High-yield structural design</li>
+          </ul>
+          <a href="YOUR_AMAZON_LINK_HERE" class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">View on Amazon</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="section faq">
-  <div class="container">
-    <div class="section-header text-center reveal">
-      <div class="section-tag">Questions Answered</div>
-      <h2 class="section-title">Everything you <em>need to know.</em></h2>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">Do I need any gardening experience?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body"><p class="faq-answer">Absolutely not. These systems are designed for complete beginners. If you can fill a cup with water and plug something in, you can grow with these gardens. All ages welcome — customers from 8 to 81.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">How long until my first harvest?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body"><p class="faq-answer">Fast growers like microgreens and lettuce are ready in as little as 7–10 days. Herbs like basil and mint typically take 3–4 weeks for a full harvest, then regrow continuously from the same pods.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">Do I need a sunny window or special room?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body"><p class="faq-answer">No. Every system includes built-in full-spectrum LED grow lights that replace sunlight completely. You can place these in a basement, office, bedroom, or windowless kitchen and your plants will thrive.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">How do I purchase? Is it really on Amazon?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body"><p class="faq-answer">Yes — every product link takes you directly to Amazon where you complete your purchase with your normal Amazon account. Fast shipping, easy returns, and secure checkout all handled by Amazon.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">How much does it cost to maintain?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-body"><p class="faq-answer">Replacement seed pods typically cost $15–25 for a full set lasting 4–6 weeks. Most customers report saving $60–100+ per month on fresh herbs and produce they previously bought at the grocery store.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<div class="final-cta">
-  <div class="reveal">
-    <div class="section-tag" style="text-align:center;">Start Today</div>
-    <h2 class="section-title" style="text-align:center;">Your garden is <em>waiting.</em></h2>
-    <p>Join thousands of wellness-driven women and families who've transformed their homes and health with smart indoor gardening.</p>
-    <a href="#products" class="btn btn-primary pulse">Shop the Full Collection →</a>
-    <div class="cta-trust">🔒 Secure Amazon Checkout · Easy Returns · All Ages Welcome</div>
-  </div>
-</div>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-4-7-8-7z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-4-7-8-7z"/></svg>
         </div>
         <div class="footer-name">Goddess Fuel <em>Wellness</em></div>
       </div>
       <div class="footer-links">
         <a href="#benefits">Benefits</a>
-        <a href="#products">Products</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
+        <a href="#products">Shop</a>
+        <a href="#how-it-works">Guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
-      <div class="footer-copy">© 2025 Goddess Fuel Wellness</div>
     </div>
     <div class="footer-divider"></div>
-    <p class="footer-legal">As an Amazon Associate, I earn from qualifying purchases. Product prices and availability are subject to change. All product images are for illustrative purposes. Results may vary.</p>
+    <p class="footer-legal">As an Amazon Associate, Goddess Fuel earns from qualifying purchases. This means if you click on an affiliate link and purchase the item, we will receive an affiliate commission at no extra cost to you.</p>
+    <div class="text-center" style="margin-top:16px;">
+      <span class="footer-copy">© 2026 Goddess Fuel Wellness. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
 <script>
-// Nav scroll
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 70);
-});
-
-// Scroll reveal + progress bars
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){
-      e.target.classList.add('show');
-      e.target.querySelectorAll('.progress-fill').forEach(bar => {
-        bar.style.width = bar.dataset.w || '80%';
-      });
+// Scroll Animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
     }
   });
-}, {threshold: 0.1});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// FAQ
-function toggleFaq(btn){
-  const body = btn.nextElementSibling;
-  const icon = btn.querySelector('.faq-icon');
-  const isOpen = body.classList.contains('open');
-  document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
-  document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
-  if(!isOpen){ body.classList.add('open'); icon.classList.add('open'); }
-}
+// Nav Scroll Effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if(window.scrollY > 50) {
+    nav.classList.add('nav-scrolled');
+  } else {
+    nav.classList.remove('nav-scrolled');
+  }
+});
 </script>
 </body>
 </html>
