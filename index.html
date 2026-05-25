@@ -341,6 +341,30 @@
 
         .guarantee span { font-size: 22px; }
 
+        /* BEEHIIV FORM CONTAINER */
+        .beehiiv-form-container {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .beehiiv-form-container h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--green-dark);
+            font-size: 22px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        /* Override Beehiiv embed styles for brand consistency */
+        .beehiiv-form-container iframe {
+            border-radius: 8px !important;
+            border: none !important;
+        }
+
         /* DISCLOSURE */
         .disclosure-bar {
             background: #f0f0f0;
@@ -391,7 +415,7 @@
     <section class="hero">
         <div class="hero-badge">Goddess Fuel Wellness</div>
         <h1>Grow Your Own <em>Natural Medicine</em><br>Right at Home</h1>
-        <p>Stop relying on pharmacies. The Medicinal Garden Kit gives you 4,818 NON-GMO seeds, 10 powerful healing plants, and a complete herbal guide — everything you need to build your own backyard pharmacy and take control of your health naturally.</p>
+        <p>Stop relying on pharmacies. The Medicinal Garden Kit gives you 4,818 NON-GMO seeds, 10 powerful healing plants, and a complete herbal guide — everything you need to build your own backyard pharmacy in just one season.</p>
         <div class="hero-cta">
             <a href="https://medicinalseedkit.com/kit/#aff=dekiston3a6d0" class="btn-primary">🌱 Get the Medicinal Garden Kit</a>
         </div>
@@ -409,8 +433,8 @@
         <div class="section-label">Why This Kit?</div>
         <h2>A Complete Natural Pharmacy in Your Backyard</h2>
         <div class="divider"></div>
-        <p>Created by Dr. Nicole Apelian, Ph.D. — a biologist, herbalist, and survival expert who managed her own Multiple Sclerosis naturally for over 20 years — the Medicinal Garden Kit is scientifically designed to give you access to the most powerful healing plants on Earth.</p>
-        <p>Each of the 10 plants was handpicked for its powerful healing properties. You'll receive a free copy of the <strong>Herbal Medicinal Guide: From Seeds to Remedies</strong> showing you exactly how to grow, harvest, and use each plant for maximum healing benefit.</p>
+        <p>Created by Dr. Nicole Apelian, Ph.D. — a biologist, herbalist, and survival expert who managed her own Multiple Sclerosis naturally for over 20 years — the Medicinal Garden Kit is designed to put nature's most powerful healing plants directly into your hands.</p>
+        <p>Each of the 10 plants was handpicked for its powerful healing properties. You'll receive a free copy of the <strong>Herbal Medicinal Guide: From Seeds to Remedies</strong> showing you exactly how to grow, harvest, and use each plant to transform your health naturally.</p>
 
         <div class="plants-grid">
             <div class="plant-card">
@@ -516,73 +540,17 @@
         <h2>Get Your Free Medicinal Plant Guide 🌿</h2>
         <p>Enter your email below and we'll send you our free guide on the top medicinal plants you can grow at home — plus exclusive wellness tips from Goddess Fuel Wellness.</p>
 
-        <div style="max-width:500px; margin:0 auto 30px;">
-            <style>
-                #make_form_container {
-                    background: white;
-                    border-radius: 12px;
-                    padding: 30px;
-                    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-                    text-align: left;
-                }
-                #make_form_container h2 {
-                    font-family: 'Playfair Display', serif;
-                    color: var(--green-dark);
-                    font-size: 22px;
-                    margin-bottom: 16px;
-                    text-align: center;
-                }
-                #make_form_container .form-group label {
-                    color: var(--text-mid);
-                    font-weight: 700;
-                    font-size: 14px;
-                    display: block;
-                    margin-bottom: 6px;
-                }
-                #make_form_container input[type="email"] {
-                    border: 2px solid #e0e0e0;
-                    border-radius: 8px;
-                    padding: 12px 16px;
-                    font-size: 15px;
-                    width: 100%;
-                    box-sizing: border-box;
-                    margin-bottom: 16px;
-                }
-                #make_form_container input[type="email"]:focus {
-                    border-color: var(--green-mid);
-                    outline: none;
-                }
-                #make_form_container button {
-                    background: linear-gradient(135deg, var(--gold), #e0b84a) !important;
-                    color: var(--green-dark) !important;
-                    font-weight: 700 !important;
-                    font-size: 16px !important;
-                    border-radius: 50px !important;
-                    padding: 16px 30px !important;
-                    width: 100% !important;
-                    border: none !important;
-                    cursor: pointer !important;
-                    transition: transform 0.2s ease !important;
-                    height: auto !important;
-                    line-height: 1.5 !important;
-                    white-space: normal !important;
-                    overflow: visible !important;
-                    font-family: 'Lato', sans-serif !important;
-                }
-                #make_form_container button:hover {
-                    transform: translateY(-2px) !important;
-                }
-            </style>
-            <div id="make_form_container">
-                <h2>Get Your Free Medicinal Plant Guide 🌿</h2>
-                <form action="https://hook.us2.make.com/xcqecfmkw5x3r8x1trjuw2t1txmcv6vi" method="POST" id="make-form">
-                    <div class="form-group">
-                        <label for="email">Email Address <span style="color: #c9a84c;">*</span></label>
-                        <input type="email" name="email" id="email" required placeholder="Enter your email address">
-                    </div>
-                    <button type="submit">Send Me The Free Guide 🌿</button>
-                </form>
-            </div>
+        <div class="beehiiv-form-container">
+            <h3>Join Our Wellness Community</h3>
+            <!-- Beehiiv Email Subscription Form Embed -->
+            <iframe 
+                src="https://embeds.beehiiv.com/f47db65e-04ee-4a5d-9a41-cc186ea54328?slim=true" 
+                data-test-id="beehiiv-embed" 
+                height="52" 
+                frameborder="0" 
+                scrolling="no" 
+                style="margin: 0; border-radius: 8px; border: 1px solid #e5e7eb; background: white; width: 100%;">
+            </iframe>
         </div>
 
         <p style="font-size:13px; color:var(--text-light); margin-bottom:30px;">🔒 No spam ever. Unsubscribe anytime.</p>
@@ -595,7 +563,7 @@
     </section>
 
     <div class="disclosure-bar">
-        <strong>Affiliate Disclosure:</strong> This page contains affiliate links. If you make a purchase through these links, Goddess Fuel Wellness may earn a small commission at no additional cost to you. We only recommend products we genuinely believe in.
+        <strong>Affiliate Disclosure:</strong> This page contains affiliate links. If you make a purchase through these links, Goddess Fuel Wellness may earn a small commission at no additional cost to you. We recommend these products because we believe in them. Thank you for your support!
         &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a>
     </div>
 
