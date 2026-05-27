@@ -3,110 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goddess Fuel | Marine Herbalism & Deep Sea Wellness</title>
-    
+    <title>Goddess Fuel Wellness | Heal Naturally From Home</title>
     <meta name="p:domain_verify" content="cb5d9193d3484ea9cb820e91a5d49b60"/>
-
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: #fcfbfa;
+            background-color: #f7f3ee;
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: #2c3e50;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            color: #2c1a0e;
             min-height: 100vh;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .container {
-            max-width: 450px;
-            width: 100%;
-            background: #ffffff;
-            padding: 40px 30px;
+        .container { max-width: 460px; width: 100%; margin: 0 auto; }
+        .hero {
+            background: #2c6e49;
             border-radius: 16px;
+            padding: 36px 28px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-            border: 1px solid #f0edf8;
-        }
-        .brand-title {
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #1a252f;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-        .brand-subtitle {
-            font-size: 14px;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .form-heading {
-            font-size: 18px;
-            color: #34495e;
-            margin-bottom: 10px;
-        }
-        .form-text {
-            font-size: 14px;
-            color: #95a5a6;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-        .input-field {
-            width: 100%;
-            padding: 14px;
             margin-bottom: 16px;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 16px;
-            background-color: #f8fafc;
-            color: #2c3e50;
-            transition: border-color 0.2s;
         }
-        .input-field:focus {
-            outline: none;
-            border-color: #b2c2bf;
-            background-color: #fff;
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
         }
-        .submit-btn {
-            width: 100%;
-            background-color: #2c3e50;
-            color: #ffffff;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-            transition: background-color 0.2s;
+        .hero h1 { font-size: 28px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 12px; }
+        .hero h1 span { color: #a8e6c3; }
+        .hero p { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .free-badge {
+            background: #fff8ee;
+            border: 2px solid #c8a97a;
+            border-radius: 12px;
+            padding: 20px 24px;
+            text-align: center;
+            margin-bottom: 16px;
         }
-        .submit-btn:hover {
-            background-color: #1a252f;
+        .free-badge .label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #c07820; font-weight: 700; margin-bottom: 8px; }
+        .free-badge h2 { font-size: 18px; color: #2c1a0e; font-weight: 700; margin-bottom: 6px; }
+        .free-badge p { font-size: 13px; color: #7a5c3a; line-height: 1.5; }
+        .plants-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0 0; }
+        .plant-item { background: #f0ece4; border-radius: 8px; padding: 8px 10px; font-size: 12px; color: #4a3520; display: flex; align-items: center; gap: 6px; }
+        .plant-item span { font-size: 16px; }
+        .signup-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid #e8ddd0;
+            margin-bottom: 16px;
         }
+        .signup-box h3 { font-size: 16px; color: #2c1a0e; font-weight: 700; margin-bottom: 6px; text-align: center; }
+        .signup-box p { font-size: 13px; color: #7a5c3a; text-align: center; margin-bottom: 20px; line-height: 1.5; }
+        .input-field { width: 100%; padding: 14px 16px; margin-bottom: 10px; border: 1.5px solid #e0d5c0; border-radius: 10px; font-size: 15px; background: #fdfaf6; color: #2c1a0e; transition: border-color 0.2s; }
+        .input-field:focus { outline: none; border-color: #2c6e49; background: #fff; }
+        .submit-btn { width: 100%; background: #2c6e49; color: #fff; padding: 15px; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-bottom: 10px; }
+        .submit-btn:hover { background: #1a5c38; }
+        .privacy-note { font-size: 11px; color: #a08060; text-align: center; }
+        .kit-box { background: #fff; border-radius: 16px; padding: 24px; border: 1px solid #e8ddd0; margin-bottom: 16px; text-align: center; }
+        .kit-box h3 { font-size: 16px; font-weight: 700; color: #2c1a0e; margin-bottom: 8px; }
+        .kit-box p { font-size: 13px; color: #7a5c3a; line-height: 1.6; margin-bottom: 16px; }
+        .kit-features { text-align: left; margin-bottom: 16px; }
+        .kit-feature { font-size: 13px; color: #2c4a30; padding: 6px 0; border-bottom: 1px solid #f0ece4; display: flex; align-items: center; gap: 8px; }
+        .kit-feature:last-child { border-bottom: none; }
+        .kit-btn { display: block; width: 100%; background: #c07820; color: #fff; padding: 15px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; text-align: center; transition: background 0.2s; }
+        .kit-btn:hover { background: #a06010; }
+        .guarantee { font-size: 12px; color: #7a5c3a; text-align: center; margin-top: 10px; }
+        .footer { text-align: center; padding: 20px 0; font-size: 12px; color: #a08060; }
+        .success-msg { display: none; background: #eaf5ec; border: 1.5px solid #2c6e49; border-radius: 10px; padding: 16px; text-align: center; font-size: 14px; color: #1a5c38; font-weight: 600; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1 class="brand-title">Goddess Fuel</h1>
-        <p class="brand-subtitle">Marine Herbalism</p>
-        
-        <h2 class="form-heading">Join the Apothecary</h2>
-        <p class="form-text">Subscribe to receive exclusive updates on deep sea wellness protocols and botanical insights.</p>
-        
-        <form action="https://mcp.beehiiv.com/mcp" method="POST">
-            <input type="email" name="email" placeholder="Enter your email address" required class="input-field">
-            <button type="submit" class="submit-btn">Subscribe</button>
-        </form>
+        <div class="hero">
+            <div class="hero-tag">🌿 Free Guide Inside</div>
+            <h1>Grow Your Own <span>Natural Medicine</span> at Home</h1>
+            <p>Discover the 10 healing plants your grandmother knew — and how to grow them yourself, even as a beginner.</p>
+        </div>
+        <div class="free-badge">
+            <div class="label">✨ Free When You Sign Up</div>
+            <h2>10 Healing Plants You Can Grow at Home</h2>
+            <p>Your complete beginner's guide to building a natural home apothecary</p>
+            <div class="plants-list">
+                <div class="plant-item"><span>🌼</span> Chamomile</div>
+                <div class="plant-item"><span>💜</span> Lavender</div>
+                <div class="plant-item"><span>🌱</span> Echinacea</div>
+                <div class="plant-item"><span>🍃</span> Peppermint</div>
+                <div class="plant-item"><span>🌿</span> Lemon Balm</div>
+                <div class="plant-item"><span>🌻</span> Calendula</div>
+                <div class="plant-item"><span>🌾</span> Valerian</div>
+                <div class="plant-item"><span>🍀</span> Yarrow</div>
+                <div class="plant-item"><span>🌸</span> Elderflower</div>
+                <div class="plant-item"><span>🌿</span> Holy Basil</div>
+            </div>
+        </div>
+        <div class="signup-box">
+            <h3>Get Your Free Guide Now</h3>
+            <p>Join the Goddess Fuel Wellness community and receive your free plant guide instantly.</p>
+            <div class="success-msg" id="success">
+                ✅ You're in! Check your email for your free guide. Welcome to Goddess Fuel! 🌿
+            </div>
+            <form id="signup-form" action="https://formspree.io/f/mwvzwwzg" method="POST">
+                <input type="text" name="name" placeholder="Your first name" required class="input-field">
+                <input type="email" name="email" placeholder="Your email address" required class="input-field">
+                <input type="hidden" name="_subject" value="New Goddess Fuel Wellness Signup!">
+                <button type="submit" class="submit-btn">🌿 Send Me The Free Guide</button>
+            </form>
+            <p class="privacy-note">🔒 No spam, ever. Unsubscribe anytime.</p>
+        </div>
+        <div class="kit-box">
+            <h3>Ready to Start Growing? 🌱</h3>
+            <p>The Medicinal Garden Kit gives you everything you need to grow all 10 healing plants — even if you have never gardened before.</p>
+            <div class="kit-features">
+                <div class="kit-feature">✅ 4,818 non-GMO heirloom seeds</div>
+                <div class="kit-feature">✅ 10 powerful medicinal plants</div>
+                <div class="kit-feature">✅ Complete beginner growing guide</div>
+                <div class="kit-feature">✅ Works indoors or outdoors</div>
+                <div class="kit-feature">✅ Seeds regrow every season</div>
+            </div>
+            <a href="https://medicinalseedkit.com/kit/#aff=dekiston3a6d0" class="kit-btn">
+                🌿 Get The Medicinal Garden Kit
+            </a>
+            <p class="guarantee">🛡️ 365-Day Money Back Guarantee — Zero Risk</p>
+        </div>
+        <div class="footer">
+            © 2026 Goddess Fuel Wellness · Watertown, NY<br>
+            <a href="mailto:dekiston1@gmail.com" style="color:#a08060;">dekiston1@gmail.com</a>
+        </div>
     </div>
-
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var data = new FormData(form);
+            fetch('https://formspree.io/f/mwvzwwzg', {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(function(response) {
+                if (response.ok) {
+                    document.getElementById('success').style.display = 'block';
+                    form.reset();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
