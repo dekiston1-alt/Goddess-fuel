@@ -62,9 +62,9 @@
         }
         .signup-box h3 { font-size: 16px; color: #2c1a0e; font-weight: 700; margin-bottom: 6px; text-align: center; }
         .signup-box p { font-size: 13px; color: #7a5c3a; text-align: center; margin-bottom: 20px; line-height: 1.5; }
-        .input-field { width: 100%; padding: 14px 16px; margin-bottom: 10px; border: 1.5px solid #e0d5c0; border-radius: 10px; font-size: 15px; background: #fdfaf6; color: #2c1a0e; transition: border-color 0.2s; }
+        .input-field { width: 100%; padding: 14px 16px; margin-bottom: 10px; border: 1.5px solid #e0d5c0; border-radius: 10px; font-size: 15px; background: #fdfaf6; color: #2c1a0e; transition: border-color 0.3s; }
         .input-field:focus { outline: none; border-color: #2c6e49; background: #fff; }
-        .submit-btn { width: 100%; background: #2c6e49; color: #fff; padding: 15px; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-bottom: 10px; }
+        .submit-btn { width: 100%; background: #2c6e49; color: #fff; padding: 15px; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.3s; }
         .submit-btn:hover { background: #1a5c38; }
         .privacy-note { font-size: 11px; color: #a08060; text-align: center; }
         .kit-box { background: #fff; border-radius: 16px; padding: 24px; border: 1px solid #e8ddd0; margin-bottom: 16px; text-align: center; }
@@ -73,11 +73,11 @@
         .kit-features { text-align: left; margin-bottom: 16px; }
         .kit-feature { font-size: 13px; color: #2c4a30; padding: 6px 0; border-bottom: 1px solid #f0ece4; display: flex; align-items: center; gap: 8px; }
         .kit-feature:last-child { border-bottom: none; }
-        .kit-btn { display: block; width: 100%; background: #c07820; color: #fff; padding: 15px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; text-align: center; transition: background 0.2s; }
+        .kit-btn { display: block; width: 100%; background: #c07820; color: #fff; padding: 15px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; text-align: center; transition: background 0.3s; }
         .kit-btn:hover { background: #a06010; }
         .guarantee { font-size: 12px; color: #7a5c3a; text-align: center; margin-top: 10px; }
         .footer { text-align: center; padding: 20px 0; font-size: 12px; color: #a08060; }
-        .success-msg { display: none; background: #eaf5ec; border: 1.5px solid #2c6e49; border-radius: 10px; padding: 16px; text-align: center; font-size: 14px; color: #1a5c38; font-weight: 600; margin-bottom: 10px; }
+        .success-msg { display: none; background: #eaf5ec; border: 1.5px solid #2c6e49; border-radius: 10px; padding: 16px; text-align: center; font-size: 14px; color: #1a5c38; font-weight: 600; margin-bottom: 16px; }
     </style>
 </head>
 <body>
@@ -108,12 +108,11 @@
             <h3>Get Your Free Guide Now</h3>
             <p>Join the Goddess Fuel Wellness community and receive your free plant guide instantly.</p>
             <div class="success-msg" id="success">
-                ✅ You're in! Check your email for your free guide. Welcome to Goddess Fuel! 🌿
+                ✅ Check your inbox to begin your medicinal garden journey.
             </div>
-            <form id="signup-form" action="https://formspree.io/f/mwvzwwzg" method="POST">
-                <input type="text" name="name" placeholder="Your first name" required class="input-field">
+            <form id="signup-form">
+                <input type="text" name="first_name" placeholder="Your first name" class="input-field">
                 <input type="email" name="email" placeholder="Your email address" required class="input-field">
-                <input type="hidden" name="_subject" value="New Goddess Fuel Wellness Signup!">
                 <button type="submit" class="submit-btn">🌿 Send Me The Free Guide</button>
             </form>
             <p class="privacy-note">🔒 No spam, ever. Unsubscribe anytime.</p>
@@ -142,16 +141,28 @@
         document.getElementById('signup-form').addEventListener('submit', function(e) {
             e.preventDefault();
             var form = this;
-            var data = new FormData(form);
-            fetch('https://formspree.io/f/mwvzwwzg', {
+            var email = form.querySelector('input[name="email"]').value;
+            var firstName = form.querySelector('input[name="first_name"]').value;
+            
+            var payload = {
+                email: email,
+                first_name: firstName,
+                source: "landing_page"
+            };
+            
+            fetch('https://goddess-fuel.app.n8n.cloud/webhook/goddess-fuel-lead-intake', {
                 method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
             }).then(function(response) {
                 if (response.ok) {
                     document.getElementById('success').style.display = 'block';
                     form.reset();
                 }
+            }).catch(function(error) {
+                console.error('Error:', error);
             });
         });
     </script>
