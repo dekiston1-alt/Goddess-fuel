@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- GODDESS FUEL WELLNESS - COMPLETE LANDING PAGE WITH EMAIL CAPTURE -->
+<!-- GODDESS FUEL WELLNESS - LANDING PAGE WITH EMAIL CAPTURE -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -723,6 +723,20 @@ footer{
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-brand">🌿 Goddess Fuel Wellness</div>
+  <div class="footer-links">
+    <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="footer-link">Shop</a>
+    <a href="mailto:dekiston1@gmail.com" class="footer-link">Contact</a>
+  </div>
+  <p class="footer-disc">
+    Affiliate disclosure: Goddess Fuel Wellness earns a commission on qualifying purchases at no additional cost to you.
+    These statements have not been evaluated by the Food and Drug Administration.
+    This product is not intended to diagnose, treat, cure, or prevent any disease.
+    Photography courtesy of Pexels contributors.
+  </p>
+</footer>
+
+<!-- EMAIL CAPTURE MODAL -->
 <div id="capture-overlay" style="position:fixed;inset:0;background:rgba(3,10,4,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.4s">
   <div style="background:linear-gradient(160deg,#0d1e0e,#050d06);border:1px solid rgba(201,168,76,0.4);border-radius:24px;max-width:440px;width:100%;padding:48px 36px;position:relative;text-align:center">
     <button onclick="closeCaptureModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#8db88f;font-size:1.4rem;cursor:pointer;line-height:1">&times;</button>
@@ -732,7 +746,7 @@ footer{
     <form id="capture-form" onsubmit="submitCapture(event)">
       <input type="text" id="capture-name" placeholder="First Name" required style="width:100%;padding:14px 18px;margin-bottom:12px;border-radius:8px;border:1px solid rgba(201,168,76,0.25);background:rgba(255,255,255,0.04);color:#fff;font-family:sans-serif;font-size:0.95rem;box-sizing:border-box">
       <input type="email" id="capture-email" placeholder="Email Address" required style="width:100%;padding:14px 18px;margin-bottom:20px;border-radius:8px;border:1px solid rgba(201,168,76,0.25);background:rgba(255,255,255,0.04);color:#fff;font-family:sans-serif;font-size:0.95rem;box-sizing:border-box">
-      <button type="submit" style="width:100%;background:linear-gradient(135deg,#c9a84c,#f0d080);color:#000;padding:16px;border:none;border-radius:50px;font-family:sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer">Send Me The Free Guide</button>
+      <button type="submit" id="capture-btn" style="width:100%;background:linear-gradient(135deg,#c9a84c,#f0d080);color:#000;padding:16px;border:none;border-radius:50px;font-family:sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer">Send Me The Free Guide</button>
     </form>
     <div id="capture-success" style="display:none">
       <div style="font-size:2.5rem;margin-bottom:12px">✅</div>
@@ -748,18 +762,6 @@ footer{
   <span style="color:#c9a84c;font-family:sans-serif;font-size:0.85rem;font-weight:600">🌿 Get your free herb guide — instant download</span>
   <button onclick="openCaptureModal()" style="background:linear-gradient(135deg,#c9a84c,#f0d080);color:#000;padding:10px 24px;border:none;border-radius:50px;font-family:sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;white-space:nowrap">Get It Free →</button>
 </div>
-  <div class="footer-brand">🌿 Goddess Fuel Wellness</div>
-  <div class="footer-links">
-    <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="footer-link">Shop</a>
-    <a href="mailto:dekiston1@gmail.com" class="footer-link">Contact</a>
-  </div>
-  <p class="footer-disc">
-    Affiliate disclosure: Goddess Fuel Wellness earns a commission on qualifying purchases at no additional cost to you.
-    These statements have not been evaluated by the Food and Drug Administration.
-    This product is not intended to diagnose, treat, cure, or prevent any disease.
-    Photography courtesy of Pexels contributors.
-  </p>
-</footer>
 
 <script>
 // ── 3D FLOATING PARTICLES ──────────────────────────────────────────
@@ -855,6 +857,63 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
+// ── EMAIL CAPTURE LOGIC ─────────────────────────────────────────────
+var captureShown = false;
+
+function openCaptureModal(){
+  document.getElementById('capture-overlay').style.opacity = '1';
+  document.getElementById('capture-overlay').style.pointerEvents = 'auto';
+}
+function closeCaptureModal(){
+  document.getElementById('capture-overlay').style.opacity = '0';
+  document.getElementById('capture-overlay').style.pointerEvents = 'none';
+}
+
+function submitCapture(e){
+  e.preventDefault();
+  var email = document.getElementById('capture-email').value;
+  var firstName = document.getElementById('capture-name').value || '';
+  var btn = document.getElementById('capture-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    var leads = JSON.parse(localStorage.getItem('gf_leads') || '[]');
+    leads.push({ email: email, first_name: firstName, date: new Date().toISOString() });
+    localStorage.setItem('gf_leads', JSON.stringify(leads));
+  } catch(err){}
+
+  document.getElementById('capture-form').style.display = 'none';
+  document.getElementById('capture-success').style.display = 'block';
+  setTimeout(function(){
+    window.location.href = "https://www.digistore24.com/redir/325658/dekiston3a6d0/";
+  }, 4000);
+}
+
+// Show sticky bar after scrolling 25%
+window.addEventListener('scroll', function(){
+  var scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  if(scrolled > 25){
+    document.getElementById('sticky-capture').style.display = 'flex';
+  }
+});
+
+// Auto-popup once after 30 seconds
+setTimeout(function(){
+  if(!captureShown){
+    openCaptureModal();
+    captureShown = true;
+  }
+}, 30000);
+
+// Exit intent (desktop)
+document.addEventListener('mouseout', function(e){
+  if(e.clientY < 10 && !captureShown){
+    openCaptureModal();
+    captureShown = true;
+  }
+});
+
 // ── SCROLL REVEAL ─────────────────────────────────────────────────
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
@@ -872,48 +931,6 @@ document.querySelectorAll(
   el.style.transform = 'translateY(32px)';
   el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
   observer.observe(el);
-});
-
-// ── EMAIL CAPTURE MODAL ────────────────────────────────────────────
-var modalShown = false;
-var captureOverlay = document.getElementById('capture-overlay');
-var stickyCapture = document.getElementById('sticky-capture');
-
-function openCaptureModal() {
-  captureOverlay.style.opacity = '1';
-  captureOverlay.style.pointerEvents = 'auto';
-  modalShown = true;
-}
-
-function closeCaptureModal() {
-  captureOverlay.style.opacity = '0';
-  captureOverlay.style.pointerEvents = 'none';
-}
-
-function submitCapture(e) {
-  e.preventDefault();
-  var name = document.getElementById('capture-name').value;
-  var email = document.getElementById('capture-email').value;
-  document.getElementById('capture-form').style.display = 'none';
-  document.getElementById('capture-success').style.display = 'block';
-  console.log('Lead captured:', name, email);
-}
-
-// Show sticky bar after 8 seconds
-setTimeout(function() {
-  stickyCapture.style.display = 'flex';
-}, 8000);
-
-// Show modal after 45 seconds if not already shown
-setTimeout(function() {
-  if (!modalShown) openCaptureModal();
-}, 45000);
-
-// Exit intent
-document.addEventListener('mouseleave', function(e) {
-  if (e.clientY <= 0 && !modalShown) {
-    openCaptureModal();
-  }
 });
 </script>
 </body>
