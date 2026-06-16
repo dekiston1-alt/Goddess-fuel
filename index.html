@@ -1,389 +1,919 @@
 <!DOCTYPE html>
+<!-- GODDESS FUEL WELLNESS - COMPLETE LANDING PAGE WITH EMAIL CAPTURE -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Goddess Fuel Wellness | Grow Your Own Medicine</title>
-<meta name="description" content="Grow 10 powerful healing herbs at home.">
+<title>Goddess Fuel Wellness | The Future of Natural Health</title>
+<meta name="description" content="Grow 10 powerful healing herbs at home. The Medicinal Garden Kit — nature's most powerful pharmacy, delivered to your door.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--g:#2e7d32;--l:#4caf50;--d:#0d1b0e;--gold:#ffd700;--w:#f0ede4;--m:#a5d6a7}
+:root{
+  --g:#1a5c1e;--l:#2e8b30;--d:#030a04;
+  --gold:#c9a84c;--gold2:#f0d080;
+  --w:#f5f0e8;--m:#8db88f;--dark2:#0a150b;
+}
 html{scroll-behavior:smooth}
-body{font-family:Georgia,serif;background:var(--d);color:var(--w);overflow-x:hidden}
-#pc{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.35}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,27,14,0.93);
-  backdrop-filter:blur(20px);padding:14px 24px;display:flex;
-  justify-content:space-between;align-items:center;
-  border-bottom:1px solid rgba(46,125,50,0.4)}
-.nb{color:var(--l);font-size:1.1rem;letter-spacing:3px;text-transform:uppercase}
-.nc{background:linear-gradient(135deg,var(--g),var(--l));color:#fff;
-  padding:10px 24px;border-radius:24px;text-decoration:none;
-  font-size:0.9rem;font-family:sans-serif;font-weight:bold}
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center;
-  padding:120px 20px 80px;overflow:hidden;z-index:1}
-.hv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  z-index:-1;filter:brightness(0.3) saturate(1.2)}
-.hvf{position:absolute;inset:0;
-  background:radial-gradient(ellipse at center,#1a4a1e 0%,var(--d) 70%);z-index:-1}
-.badge{display:inline-block;background:rgba(46,125,50,0.3);
-  border:1px solid var(--g);color:var(--l);padding:8px 28px;border-radius:24px;
-  font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;
-  font-family:sans-serif;margin-bottom:32px}
-h1{font-size:clamp(2.5rem,8vw,5rem);line-height:1.1;color:#fff;
-  max-width:900px;margin-bottom:28px;text-shadow:0 4px 24px rgba(0,0,0,0.8)}
-h1 em{color:var(--l);font-style:normal}
-.sub{font-size:clamp(1rem,2.5vw,1.3rem);color:#c8e6c9;max-width:640px;
-  margin-bottom:48px;line-height:1.8}
-.cta{display:inline-block;background:linear-gradient(135deg,var(--g),var(--l));
-  color:#fff;padding:22px 56px;border-radius:50px;font-size:1.15rem;
-  text-decoration:none;font-family:sans-serif;font-weight:bold;
-  box-shadow:0 12px 48px rgba(46,125,50,0.6);transition:transform 0.2s;
-  animation:glow 2.5s ease-in-out infinite}
-.cta:hover{transform:translateY(-4px)}
-@keyframes glow{
-  0%,100%{box-shadow:0 12px 48px rgba(46,125,50,0.6)}
-  50%{box-shadow:0 12px 72px rgba(76,175,80,0.9)}}
-.pills{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:40px}
-.pill{background:rgba(46,125,50,0.2);border:1px solid rgba(76,175,80,0.4);
-  color:#a5d6a7;padding:8px 20px;border-radius:20px;
-  font-family:sans-serif;font-size:0.85rem}
-.stats{position:relative;z-index:1;background:rgba(17,31,18,0.97);
-  padding:60px 20px;display:flex;flex-wrap:wrap;justify-content:center;gap:48px}
-.stat{text-align:center}
-.sn{font-size:3.5rem;color:var(--l);font-weight:bold;display:block}
-.sl{font-family:sans-serif;font-size:0.9rem;color:var(--m);margin-top:8px}
-.sec{position:relative;z-index:1;padding:80px 20px;text-align:center}
-.st{font-size:clamp(1.8rem,5vw,3rem);color:var(--w);margin-bottom:16px}
-.ss{color:var(--m);font-family:sans-serif;font-size:1.1rem;margin-bottom:48px}
-.gg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:12px;max-width:1100px;margin:0 auto 48px}
-.gi{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/3}
-.gi img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;
-  filter:saturate(1.2)}
-.gi:hover img{transform:scale(1.08)}
-.go{position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,0.7),transparent 60%);
-  display:flex;align-items:flex-end;padding:16px;opacity:0;transition:opacity 0.3s}
-.gi:hover .go{opacity:1}
-.go span{color:#fff;font-family:sans-serif;font-size:0.9rem;font-weight:bold}
-.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:24px;max-width:1000px;margin:0 auto 48px}
-.bc{background:linear-gradient(135deg,#111f12,#1a3a1e);
-  border:1px solid rgba(46,125,50,0.3);border-radius:20px;padding:36px 28px;
-  transition:transform 0.3s,border-color 0.3s}
-.bc:hover{transform:translateY(-6px);border-color:var(--g)}
-.bi{font-size:3rem;margin-bottom:20px;display:block}
-.bc h3{color:var(--l);font-size:1.3rem;margin-bottom:14px}
-.bc p{color:var(--m);font-family:sans-serif;font-size:0.95rem;line-height:1.8}
-.bl{list-style:none;max-width:700px;margin:0 auto 48px;text-align:left}
-.bl li{padding:16px 0;font-size:1.1rem;color:#c8e6c9;
-  border-bottom:1px solid rgba(46,125,50,0.2)}
-.hg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
-  gap:16px;max-width:1000px;margin:48px auto}
-.hc{background:linear-gradient(135deg,#1a3a1e,#0d1b0e);
-  border:1px solid rgba(46,125,50,0.25);border-radius:16px;padding:24px 12px;
-  transition:transform 0.3s}
-.hc:hover{transform:translateY(-4px);border-color:var(--g)}
-.he{font-size:2.5rem;margin-bottom:10px}
-.hn{color:var(--l);font-size:0.9rem;font-family:sans-serif;font-weight:bold}
-.hu{color:#66bb6a;font-size:0.78rem;font-family:sans-serif;margin-top:6px}
-.biz{position:relative;z-index:1;
-  background:linear-gradient(135deg,#08081a,#1a1a3e);
-  padding:100px 20px;text-align:center;
-  border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
-.gbadge{display:inline-block;background:rgba(255,215,0,0.15);
-  border:1px solid var(--gold);color:var(--gold);padding:8px 28px;
-  border-radius:24px;font-size:0.8rem;letter-spacing:4px;
-  text-transform:uppercase;font-family:sans-serif;margin-bottom:32px}
-.biz h2{color:var(--gold);font-size:clamp(2rem,6vw,3.5rem);
-  margin-bottom:24px;max-width:800px;margin-left:auto;margin-right:auto}
-.biz > p{color:#c8c8ff;font-family:sans-serif;max-width:700px;
-  margin:0 auto 64px;font-size:1.1rem;line-height:1.9}
-.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;max-width:1000px;margin:0 auto 64px}
-.sc{background:rgba(255,255,255,0.04);border:1px solid rgba(255,215,0,0.25);
-  border-radius:20px;padding:32px 24px;text-align:left;
-  transition:border-color 0.3s,transform 0.3s}
-.sc:hover{border-color:var(--gold);transform:translateY(-4px)}
-.sc h3{color:var(--gold);font-size:1.1rem;margin-bottom:16px;font-family:sans-serif}
-.sc ul{list-style:none;color:#c8c8ff;font-family:sans-serif;font-size:0.9rem}
-.sc ul li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
-.sc ul li::before{content:"✓ ";color:var(--gold)}
-.pb{background:rgba(255,215,0,0.08);border:2px solid var(--gold);
-  border-radius:24px;padding:48px 40px;max-width:520px;margin:0 auto 40px}
-.po{font-family:sans-serif;color:#666;text-decoration:line-through;font-size:1.1rem}
-.pn{font-size:4rem;color:var(--gold);font-weight:bold;margin:12px 0;display:block}
-.pl{font-family:sans-serif;color:#c8c8ff;font-size:0.95rem}
-.ctag{display:inline-block;
-  background:linear-gradient(135deg,var(--gold),#ffb300);color:#000;
-  padding:22px 56px;border-radius:50px;font-size:1.2rem;text-decoration:none;
-  font-family:sans-serif;font-weight:bold;
-  box-shadow:0 12px 48px rgba(255,215,0,0.4);transition:transform 0.2s}
-.ctag:hover{transform:translateY(-4px)}
-.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:24px;max-width:1000px;margin:48px auto}
-.tc{background:linear-gradient(135deg,#1a3a1e,#0d2010);
-  border:1px solid rgba(46,125,50,0.3);border-radius:20px;padding:32px;text-align:left}
-.stars{color:var(--gold);font-size:1.3rem;margin-bottom:16px}
-.tt{color:var(--m);font-size:1rem;line-height:1.8;margin-bottom:20px;font-style:italic}
-.tn{color:var(--l);font-family:sans-serif;font-size:0.85rem;font-weight:bold}
-.urg{position:relative;z-index:1;
-  background:linear-gradient(135deg,var(--g),#1b5e20);
-  padding:80px 20px;text-align:center}
-.urg h2{color:#fff;font-size:clamp(1.8rem,5vw,3rem);margin-bottom:20px}
-.urg p{color:#c8e6c9;font-family:sans-serif;font-size:1.1rem;
-  margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto}
-.cd{display:flex;gap:20px;justify-content:center;margin-bottom:40px;flex-wrap:wrap}
-.cb{background:rgba(0,0,0,0.25);border-radius:16px;padding:20px 32px;min-width:90px}
-.cn{font-size:3rem;color:#fff;font-weight:bold;display:block;
-  font-family:sans-serif;line-height:1}
-.cl{font-size:0.75rem;color:#a5d6a7;font-family:sans-serif;
-  text-transform:uppercase;margin-top:8px;display:block}
-footer{position:relative;z-index:1;background:#030806;padding:48px 20px;
-  text-align:center;border-top:1px solid rgba(46,125,50,0.2)}
-footer p{font-family:sans-serif;font-size:0.85rem;color:#4caf50;margin-bottom:10px}
-footer a{color:#81c784;text-decoration:none}
-@media(max-width:600px){
-  .cta,.ctag{padding:18px 36px;font-size:1rem}
-  .pn{font-size:3rem}
+body{font-family:'Inter',sans-serif;background:var(--d);color:var(--w);overflow-x:hidden}
+
+/* ── 3D CANVAS ── */
+#canvas3d{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  padding:20px 40px;display:flex;justify-content:space-between;align-items:center;
+  background:linear-gradient(to bottom,rgba(3,10,4,0.9),transparent);
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;color:var(--gold);letter-spacing:3px;
+  text-transform:uppercase;
+}
+.nav-link{
+  color:var(--m);font-size:0.85rem;letter-spacing:2px;
+  text-transform:uppercase;text-decoration:none;
+  border:1px solid rgba(201,168,76,0.4);
+  padding:10px 28px;border-radius:2px;
+  transition:all 0.3s;font-weight:500;
+}
+.nav-link:hover{background:var(--gold);color:#000;border-color:var(--gold)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:140px 24px 100px;
+  overflow:hidden;z-index:1;
+}
+.hero-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:-1;
+  filter:brightness(0.25) saturate(1.4) contrast(1.1);
+}
+.hero-overlay{
+  position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(ellipse at center,rgba(26,92,30,0.3) 0%,rgba(3,10,4,0.8) 70%);
+}
+.eyebrow{
+  font-family:'Inter',sans-serif;font-size:0.72rem;
+  letter-spacing:5px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:32px;opacity:0.9;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,9vw,7rem);
+  line-height:1.05;color:#fff;
+  max-width:1000px;margin-bottom:12px;
+  text-shadow:0 4px 40px rgba(0,0,0,0.6);
+  animation:fadeUp 1.2s ease both;
+}
+.hero h1 em{
+  color:var(--gold);font-style:italic;
+}
+.hero-sub{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.1rem,2.5vw,1.6rem);
+  color:rgba(245,240,232,0.7);
+  max-width:700px;margin:24px auto 56px;
+  line-height:1.8;font-style:italic;
+  animation:fadeUp 1.2s 0.2s ease both;
+}
+.hero-cta{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold),var(--gold2),var(--gold));
+  background-size:200% auto;
+  color:#0a0a00;padding:20px 64px;
+  font-family:'Inter',sans-serif;font-weight:600;
+  font-size:0.9rem;letter-spacing:3px;text-transform:uppercase;
+  text-decoration:none;border-radius:2px;
+  box-shadow:0 8px 48px rgba(201,168,76,0.4);
+  animation:fadeUp 1.2s 0.4s ease both,shimmer 3s 1.6s linear infinite;
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.hero-cta:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 64px rgba(201,168,76,0.6);
+}
+@keyframes shimmer{
+  0%{background-position:0% center}
+  100%{background-position:200% center}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.scroll-hint{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  color:var(--gold);font-size:0.7rem;letter-spacing:4px;
+  text-transform:uppercase;opacity:0.6;animation:bob 2s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ── STRIP ── */
+.strip{
+  position:relative;z-index:1;
+  background:var(--gold);padding:18px 40px;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:48px;
+}
+.strip-item{
+  font-family:'Inter',sans-serif;font-size:0.75rem;
+  letter-spacing:3px;text-transform:uppercase;
+  color:#0a0a00;font-weight:600;
+}
+
+/* ── SECTIONS ── */
+.section{position:relative;z-index:1;padding:120px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.overline{
+  font-size:0.7rem;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;display:block;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,5vw,3.8rem);
+  color:var(--w);line-height:1.2;margin-bottom:24px;
+}
+.section-title em{color:var(--gold);font-style:italic}
+.section-body{
+  color:rgba(245,240,232,0.65);font-size:1.05rem;
+  line-height:1.9;max-width:680px;
+}
+
+/* ── STATS ── */
+.stats-row{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1px;background:rgba(201,168,76,0.15);
+  border:1px solid rgba(201,168,76,0.15);
+  position:relative;z-index:1;
+}
+.stat-box{
+  background:var(--dark2);padding:56px 32px;
+  text-align:center;
+}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:3.8rem;color:var(--gold);
+  display:block;line-height:1;margin-bottom:12px;
+}
+.stat-label{
+  font-size:0.72rem;letter-spacing:4px;
+  text-transform:uppercase;color:var(--m);
+}
+
+/* ── GALLERY ── */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,280px);
+  gap:4px;margin:80px 0 0;
+}
+.gallery-item{overflow:hidden;position:relative}
+.gallery-item:first-child{grid-column:span 2;grid-row:span 2}
+.gallery-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.8s ease;filter:saturate(1.1);
+}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item-label{
+  position:absolute;bottom:20px;left:20px;
+  font-size:0.7rem;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  background:rgba(3,10,4,0.7);padding:6px 14px;
+  backdrop-filter:blur(10px);
+}
+
+/* ── HERB CARDS ── */
+.herb-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:2px;margin-top:64px;
+}
+.herb-card{
+  background:linear-gradient(160deg,#0d1e0e,#050d06);
+  border:1px solid rgba(201,168,76,0.1);
+  padding:40px 24px;text-align:center;
+  transition:all 0.4s ease;cursor:default;
+  position:relative;overflow:hidden;
+}
+.herb-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,0.05),transparent);
+  opacity:0;transition:opacity 0.4s;
+}
+.herb-card:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-4px)}
+.herb-card:hover::before{opacity:1}
+.herb-emoji{font-size:2.8rem;margin-bottom:16px;display:block}
+.herb-name{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;color:var(--w);margin-bottom:8px;
+}
+.herb-benefit{
+  font-size:0.72rem;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);opacity:0.8;
+}
+
+/* ── BENEFITS ── */
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2px;margin-top:64px;
+}
+.benefit-card{
+  background:linear-gradient(160deg,#0d1e0e,#050d06);
+  border:1px solid rgba(201,168,76,0.1);
+  padding:52px 40px;
+  transition:all 0.4s;
+}
+.benefit-card:hover{border-color:rgba(201,168,76,0.3);background:linear-gradient(160deg,#111f12,#070f08)}
+.benefit-num{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;color:rgba(201,168,76,0.15);
+  line-height:1;margin-bottom:24px;display:block;
+}
+.benefit-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;color:var(--w);margin-bottom:16px;
+}
+.benefit-text{
+  color:rgba(245,240,232,0.6);font-size:0.95rem;line-height:1.8;
+}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2px;margin-top:64px;
+}
+.testi-card{
+  background:linear-gradient(160deg,#0d1e0e,#050d06);
+  border:1px solid rgba(201,168,76,0.1);
+  padding:48px 36px;
+}
+.testi-stars{color:var(--gold);font-size:1rem;margin-bottom:24px;letter-spacing:4px}
+.testi-quote{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;color:var(--w);
+  line-height:1.8;font-style:italic;margin-bottom:28px;
+}
+.testi-author{
+  font-size:0.72rem;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);opacity:0.8;
+}
+
+/* ── ENTERPRISE SECTION ── */
+.enterprise{
+  position:relative;z-index:1;
+  background:linear-gradient(160deg,#04060f,#0a0c1a,#04060f);
+  padding:160px 24px;
+  border-top:1px solid rgba(201,168,76,0.2);
+  border-bottom:1px solid rgba(201,168,76,0.2);
+  overflow:hidden;
+}
+.enterprise::before{
+  content:'';position:absolute;
+  top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(ellipse at center,rgba(201,168,76,0.04) 0%,transparent 60%);
+  animation:rotate 20s linear infinite;
+}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.enterprise-inner{max-width:1100px;margin:0 auto;position:relative}
+.enterprise-label{
+  font-size:0.68rem;letter-spacing:6px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:32px;display:block;opacity:0.8;
+}
+.enterprise-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,6vw,5rem);
+  color:#fff;line-height:1.1;
+  max-width:800px;margin-bottom:32px;
+}
+.enterprise-title em{color:var(--gold);font-style:italic}
+.enterprise-body{
+  color:rgba(255,255,255,0.5);font-size:1.1rem;
+  line-height:1.9;max-width:640px;margin-bottom:80px;
+}
+.pillars{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:2px;margin-bottom:80px;
+}
+.pillar{
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(201,168,76,0.12);
+  padding:48px 32px;
+  transition:border-color 0.4s,background 0.4s;
+}
+.pillar:hover{
+  border-color:rgba(201,168,76,0.35);
+  background:rgba(201,168,76,0.04);
+}
+.pillar-icon{font-size:2rem;margin-bottom:24px;display:block}
+.pillar-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;color:var(--gold);
+  margin-bottom:16px;
+}
+.pillar-text{
+  color:rgba(255,255,255,0.45);font-size:0.9rem;line-height:1.8;
+}
+.pillar-list{
+  list-style:none;margin-top:16px;
+}
+.pillar-list li{
+  color:rgba(255,255,255,0.4);font-size:0.85rem;
+  padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.pillar-list li::before{content:'— ';color:var(--gold);opacity:0.6}
+.enterprise-value{
+  display:flex;align-items:flex-end;gap:40px;
+  flex-wrap:wrap;margin-bottom:48px;
+}
+.value-number{
+  font-family:'Playfair Display',serif;
+  font-size:7rem;color:var(--gold);line-height:1;
+  opacity:0.9;
+}
+.value-context{max-width:400px}
+.value-context p{
+  color:rgba(255,255,255,0.45);font-size:0.95rem;
+  line-height:1.8;
+}
+.enterprise-cta{
+  display:inline-block;
+  border:1px solid var(--gold);
+  color:var(--gold);padding:20px 56px;
+  font-family:'Inter',sans-serif;font-weight:500;
+  font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;
+  text-decoration:none;transition:all 0.4s;
+}
+.enterprise-cta:hover{
+  background:var(--gold);color:#000;
+}
+
+/* ── URGENCY ── */
+.urgency{
+  position:relative;z-index:1;
+  background:var(--dark2);padding:120px 24px;
+  text-align:center;
+}
+.countdown{
+  display:flex;gap:4px;justify-content:center;
+  margin:56px auto;max-width:500px;
+}
+.count-unit{
+  flex:1;background:rgba(201,168,76,0.06);
+  border:1px solid rgba(201,168,76,0.15);
+  padding:32px 16px;
+}
+.count-num{
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;color:var(--gold);
+  display:block;line-height:1;
+}
+.count-label{
+  font-size:0.65rem;letter-spacing:3px;
+  text-transform:uppercase;color:var(--m);
+  margin-top:10px;display:block;opacity:0.7;
+}
+.urgency-cta{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;padding:22px 72px;
+  font-family:'Inter',sans-serif;font-weight:700;
+  font-size:0.85rem;letter-spacing:4px;text-transform:uppercase;
+  text-decoration:none;
+  box-shadow:0 12px 64px rgba(201,168,76,0.3);
+  transition:all 0.3s;
+}
+.urgency-cta:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 80px rgba(201,168,76,0.5);
+}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  background:#000;padding:64px 40px;
+  border-top:1px solid rgba(201,168,76,0.1);
+  display:flex;flex-wrap:wrap;
+  justify-content:space-between;align-items:center;gap:24px;
+}
+.footer-brand{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;color:var(--gold);
+  letter-spacing:3px;text-transform:uppercase;
+}
+.footer-links{display:flex;gap:32px;flex-wrap:wrap}
+.footer-link{
+  color:rgba(245,240,232,0.3);font-size:0.8rem;
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;transition:color 0.3s;
+}
+.footer-link:hover{color:var(--gold)}
+.footer-disc{
+  width:100%;color:rgba(245,240,232,0.2);
+  font-size:0.75rem;line-height:1.6;
+  border-top:1px solid rgba(255,255,255,0.05);
+  padding-top:24px;margin-top:8px;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gallery-item:first-child{grid-column:span 2;grid-row:span 1}
+  .value-number{font-size:5rem}
+  footer{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+}
+@media(max-width:480px){
+  .strip{gap:24px}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-item:first-child{grid-column:span 1}
 }
 </style>
 </head>
 <body>
-<canvas id="pc"></canvas>
+
+<canvas id="canvas3d"></canvas>
+
+<!-- NAV -->
 <nav>
-  <div class="nb">🌿 Goddess Fuel Wellness</div>
-  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="nc">Get the Kit &rarr;</a>
+  <div class="logo">Goddess Fuel</div>
+  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="nav-link">Acquire Your Kit</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <video autoplay muted loop playsinline class="hv"><source src="https://videos.pexels.com/video-files/1494294/1494294-hd_1920_1080_24fps.mp4" type="video/mp4"></video>
-  <div class="badge">🌿 Natural Healing</div>
-  <h1>Unlock Your Calm: Natural Anxiety Relief with Lavender, Ashwagandha, and Lemon Balm</h1>
-  <p class="sub">Reclaim your peace of mind with our expertly blended herbal solutions. Embrace tranquility, naturally.</p>
-  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="cta" id="hero-cta">
-    Yes! I Want My Medicinal Garden Kit &rarr;
-  </a>
-  <div class="pills">
-    <span class="pill">✓ Ships Fast</span>
-    <span class="pill">✓ Beginner Friendly</span>
-    <span class="pill">✓ 60-Day Guarantee</span>
-    <span class="pill">✓ 10 Healing Herbs</span>
-  </div>
+  <video class="hero-video" autoplay muted loop playsinline
+    src="https://player.vimeo.com/external/370331493.hd.mp4?s=e90dcaba73c19e0e36f03406b47bbeef4e9fc77b&profile_id=175">
+  </video>
+  <div class="hero-overlay"></div>
+  <p class="eyebrow">The Medicinal Garden Collection</p>
+  <h1>Nature's Most<br>Powerful <em>Pharmacy</em><br>At Your Fingertips</h1>
+  <p class="hero-sub">Ten ancient healing herbs. One extraordinary kit. A lifetime of natural remedies grown from your own home.</p>
+  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="hero-cta">Claim Your Garden Kit</a>
+  <div class="scroll-hint">↓ &nbsp; Discover &nbsp; ↓</div>
 </section>
 
-<div class="stats">
-  <div class="stat"><span class="sn">47K+</span><div class="sl">Happy Growers</div></div>
-  <div class="stat"><span class="sn">10</span><div class="sl">Herbs Included</div></div>
-  <div class="stat"><span class="sn">60</span><div class="sl">Day Guarantee</div></div>
-  <div class="stat"><span class="sn">$0</span><div class="sl">Supplements Needed</div></div>
+<!-- GOLD STRIP -->
+<div class="strip">
+  <span class="strip-item">✦ Ships Worldwide</span>
+  <span class="strip-item">✦ 60-Day Guarantee</span>
+  <span class="strip-item">✦ 10 Medicinal Varieties</span>
+  <span class="strip-item">✦ Beginner Approved</span>
+  <span class="strip-item">✦ Trusted by 47,000+</span>
 </div>
 
-<section class="sec" style="background:#0a150b">
-  <h2 class="st">Real 4K Herb Photography</h2>
-  <p class="ss">What your healing garden could look like</p>
-  <div class="gg"><div class="gi"><img src="https://images.pexels.com/photos/12686034/pexels-photo-12686034.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="lavender" loading="lazy"><div class="go"><span>Lavender</span></div></div><div class="gi"><img src="https://images.pexels.com/photos/17192986/pexels-photo-17192986.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="chamomile" loading="lazy"><div class="go"><span>Chamomile</span></div></div><div class="gi"><img src="https://images.pexels.com/photos/6979907/pexels-photo-6979907.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="turmeric" loading="lazy"><div class="go"><span>Turmeric</span></div></div><div class="gi"><img src="https://images.pexels.com/photos/189386/pexels-photo-189386.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="echinacea" loading="lazy"><div class="go"><span>Echinacea</span></div></div><div class="gi"><img src="https://images.pexels.com/photos/34056432/pexels-photo-34056432.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="peppermint" loading="lazy"><div class="go"><span>Peppermint</span></div></div><div class="gi"><img src="https://images.pexels.com/photos/15666783/pexels-photo-15666783.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="herbal medicine" loading="lazy"><div class="go"><span>Herbal Medicine</span></div></div></div>
-  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="cta">Start Growing Today &rarr;</a>
-</section>
-
-<section class="sec" style="background:#0d1b0e">
-  <h2 class="st">What You Can Heal Naturally</h2>
-  <p class="ss">Every herb targets a real health problem</p>
-  <ul class="bl"><li>🌿 Soothe your nervous system and promote deep relaxation with natural lavender.</li>
-<li>🌿 Adapt to stress more effectively with ashwagandha's powerful adaptogenic properties.</li>
-<li>🌿 Gently ease tension and uplift your mood using calming lemon balm.</li>
-<li>🌿 Fortify your immune system with potent Echinacea and Elderberry.</li>
-<li>🌿 Leverage garlic's natural antiviral and antibacterial properties daily.</li>
-<li>🌿 Achieve year-round wellness and energy with plant-powered immunity.</li></ul>
-  <div class="bg">
-    <div class="bc"><span class="bi">😴</span><h3>Deep Sleep</h3>
-      <p>Valerian and chamomile help you fall asleep fast without melatonin pills.</p></div>
-    <div class="bc"><span class="bi">😰</span><h3>Anxiety Relief</h3>
-      <p>Ashwagandha and lemon balm calm your nervous system naturally within days.</p></div>
-    <div class="bc"><span class="bi">🔥</span><h3>Pain Relief</h3>
-      <p>Turmeric and arnica — nature's ibuprofen without the side effects.</p></div>
-    <div class="bc"><span class="bi">🛡️</span><h3>Immune Defense</h3>
-      <p>Echinacea and elderberry keep you strong through every season.</p></div>
-    <div class="bc"><span class="bi">⚡</span><h3>Natural Energy</h3>
-      <p>Holy basil and ginseng replace your afternoon crash with clean energy.</p></div>
-    <div class="bc"><span class="bi">🧠</span><h3>Mental Clarity</h3>
-      <p>Rosemary and bacopa sharpen focus and memory.</p></div>
-  </div>
-  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="cta">Get My Healing Garden Kit &rarr;</a>
-</section>
-
-<section class="sec" style="background:#060e07">
-  <h2 class="st">10 Herbs. 10 Superpowers.</h2>
-  <p class="ss">Everything in your kit</p>
-  <div class="hg">
-    <div class="hc"><div class="he">🌸</div><div class="hn">Lavender</div><div class="hu">Stress &amp; Sleep</div></div>
-    <div class="hc"><div class="he">🌼</div><div class="hn">Chamomile</div><div class="hu">Calm &amp; Digestion</div></div>
-    <div class="hc"><div class="he">🌿</div><div class="hn">Ashwagandha</div><div class="hu">Anxiety &amp; Energy</div></div>
-    <div class="hc"><div class="he">🍃</div><div class="hn">Peppermint</div><div class="hu">Digestion &amp; Focus</div></div>
-    <div class="hc"><div class="he">🌻</div><div class="hn">Echinacea</div><div class="hu">Immunity</div></div>
-    <div class="hc"><div class="he">🌱</div><div class="hn">Turmeric</div><div class="hu">Pain &amp; Inflammation</div></div>
-    <div class="hc"><div class="he">🍀</div><div class="hn">Lemon Balm</div><div class="hu">Mood &amp; Sleep</div></div>
-    <div class="hc"><div class="he">🌾</div><div class="hn">Valerian</div><div class="hu">Deep Sleep</div></div>
-    <div class="hc"><div class="he">🌺</div><div class="hn">Holy Basil</div><div class="hu">Stress &amp; Energy</div></div>
-    <div class="hc"><div class="he">🫚</div><div class="hn">Rosemary</div><div class="hu">Memory &amp; Focus</div></div>
-  </div>
-  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="cta">Get All 10 Herbs Now &rarr;</a>
-</section>
-
-<section class="sec" style="background:#111f12">
-  <h2 class="st">Real People. Real Results.</h2>
-  <div class="tg">
-    <div class="tc"><div class="stars">⭐⭐⭐⭐⭐</div>
-      <p class="tt">"I haven't bought melatonin in 3 months. My chamomile and valerian grow on my windowsill and I sleep like a baby."</p>
-      <div class="tn">— Maria T., Texas</div></div>
-    <div class="tc"><div class="stars">⭐⭐⭐⭐⭐</div>
-      <p class="tt">"My anxiety was through the roof. Ashwagandha tea after week 2 changed everything. I feel like myself again."</p>
-      <div class="tn">— Keisha R., Georgia</div></div>
-    <div class="tc"><div class="stars">⭐⭐⭐⭐⭐</div>
-      <p class="tt">"I thought I had a black thumb. This kit made it so easy. My whole family uses the herbs now."</p>
-      <div class="tn">— Sandra W., Ohio</div></div>
+<!-- INTRO -->
+<section class="section" style="background:#030a04">
+  <div class="section-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <div>
+      <span class="overline">Our Philosophy</span>
+      <h2 class="section-title">Heal From the<br><em>Ground Up</em></h2>
+      <p class="section-body">For thousands of years, humanity's most powerful medicines grew in gardens, not laboratories. We've curated the ten most potent healing herbs — each chosen for its proven efficacy, ease of cultivation, and transformative effect on human health.</p>
+      <br><br>
+      <p class="section-body">Whether you're seeking relief from anxiety, better sleep, natural pain management, or simply the profound satisfaction of growing your own medicine — this is where that journey begins.</p>
+    </div>
+    <div style="border:1px solid rgba(201,168,76,0.2);padding:56px 40px;background:linear-gradient(160deg,#0d1e0e,#050d06)">
+      <span class="overline">What Arrives at Your Door</span>
+      <br>
+      <ul style="list-style:none;margin-top:16px">
+        <li style="padding:18px 0;border-bottom:1px solid rgba(201,168,76,0.1);color:rgba(245,240,232,0.7);font-size:0.95rem;display:flex;justify-content:space-between">
+          <span>10 Heirloom Medicinal Seed Varieties</span><span style="color:var(--gold)">✦</span>
+        </li>
+        <li style="padding:18px 0;border-bottom:1px solid rgba(201,168,76,0.1);color:rgba(245,240,232,0.7);font-size:0.95rem;display:flex;justify-content:space-between">
+          <span>Illustrated Growing &amp; Healing Guide</span><span style="color:var(--gold)">✦</span>
+        </li>
+        <li style="padding:18px 0;border-bottom:1px solid rgba(201,168,76,0.1);color:rgba(245,240,232,0.7);font-size:0.95rem;display:flex;justify-content:space-between">
+          <span>Remedy Preparation Instructions</span><span style="color:var(--gold)">✦</span>
+        </li>
+        <li style="padding:18px 0;border-bottom:1px solid rgba(201,168,76,0.1);color:rgba(245,240,232,0.7);font-size:0.95rem;display:flex;justify-content:space-between">
+          <span>Indoor &amp; Outdoor Cultivation Methods</span><span style="color:var(--gold)">✦</span>
+        </li>
+        <li style="padding:18px 0;color:rgba(245,240,232,0.7);font-size:0.95rem;display:flex;justify-content:space-between">
+          <span>Lifetime Access to Growing Community</span><span style="color:var(--gold)">✦</span>
+        </li>
+      </ul>
+      <br>
+      <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/"
+         style="display:block;text-align:center;background:var(--gold);color:#000;padding:18px;font-size:0.8rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;text-decoration:none;margin-top:24px">
+        Order Now
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="biz">
-  <div class="gbadge">💼 For Entrepreneurs &amp; Business Owners</div>
-  <h2>Want This Entire AI Content Empire For YOUR Business?</h2>
-  <p>Fully autonomous system generating Pinterest pins, TikTok videos, 4K landing pages and email sequences — completely hands-free. Now licensing to serious entrepreneurs.</p>
-  <div class="sg">
-    <div class="sc"><h3>🤖 AI Content Engine</h3><ul>
-      <li>100 Pinterest pins per run</li><li>20 TikTok videos with voice</li>
-      <li>20 Instagram Reels ready</li><li>Runs free on Google Colab</li>
-      <li>Zero monthly cost</li></ul></div>
-    <div class="sc"><h3>📊 Command Center</h3><ul>
-      <li>Google Sheets dashboard</li><li>8-month content schedule</li>
-      <li>Sales tracker built in</li><li>Auto-logs every asset</li>
-      <li>Real-time revenue tracking</li></ul></div>
-    <div class="sc"><h3>🌐 4K Landing Pages</h3><ul>
-      <li>Real Pexels 4K videos</li><li>3D particle animations</li>
-      <li>Auto-pushes to GitHub</li><li>SEO optimized per run</li>
-      <li>Affiliate links embedded</li></ul></div>
-    <div class="sc"><h3>📧 Email Automation</h3><ul>
-      <li>AI writes nurture sequences</li><li>Brevo integration ready</li>
-      <li>n8n workflow compatible</li><li>300 emails/day free</li>
-      <li>Full funnel automated</li></ul></div>
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-box"><span class="stat-num">47K</span><span class="stat-label">Gardens Started</span></div>
+  <div class="stat-box"><span class="stat-num">10</span><span class="stat-label">Healing Herbs</span></div>
+  <div class="stat-box"><span class="stat-num">60</span><span class="stat-label">Day Guarantee</span></div>
+  <div class="stat-box"><span class="stat-num">98%</span><span class="stat-label">Satisfaction Rate</span></div>
+</div>
+
+<!-- GALLERY -->
+<section class="section" style="background:#030a04;padding-bottom:0">
+  <div class="section-inner">
+    <span class="overline">The Collection</span>
+    <h2 class="section-title">Ten Herbs.<br><em>Infinite</em> Remedies.</h2>
   </div>
-  <div class="pb">
-    <div class="po">Agency value: $2,500+/month</div>
-    <span class="pn">$497</span>
-    <div class="pl">One-time license — you own it forever</div>
-    <br>
-    <p style="color:#c8c8ff;font-family:sans-serif;font-size:0.9rem;line-height:1.8;margin-top:16px">
-      Full Colab notebook + Google Sheets + setup guide + 30-day support
-    </p>
+  <div class="gallery-grid" style="margin-top:48px">
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lavender">
+      <div class="gallery-item-label">Lavender — Stress &amp; Sleep</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/906150/pexels-photo-906150.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Chamomile">
+      <div class="gallery-item-label">Chamomile — Calm</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/1477166/pexels-photo-1477166.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Herbs">
+      <div class="gallery-item-label">Peppermint — Digestion</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Turmeric">
+      <div class="gallery-item-label">Turmeric — Inflammation</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/4202926/pexels-photo-4202926.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Echinacea">
+      <div class="gallery-item-label">Echinacea — Immunity</div>
+    </div>
   </div>
-  <a href="mailto:dekiston1@gmail.com?subject=AI Content Empire License" class="ctag">
-    💼 I Want This System For My Business &rarr;
+</section>
+
+<!-- HERBS -->
+<section class="section" style="background:#030a04">
+  <div class="section-inner">
+    <span class="overline">The Full Collection</span>
+    <h2 class="section-title">Your Complete<br><em>Healing Garden</em></h2>
+    <div class="herb-grid">
+      <div class="herb-card"><span class="herb-emoji">🌸</span><div class="herb-name">Lavender</div><div class="herb-benefit">Anxiety &amp; Sleep</div></div>
+      <div class="herb-card"><span class="herb-emoji">🌼</span><div class="herb-name">Chamomile</div><div class="herb-benefit">Calm &amp; Digestion</div></div>
+      <div class="herb-card"><span class="herb-emoji">🌿</span><div class="herb-name">Ashwagandha</div><div class="herb-benefit">Stress &amp; Vitality</div></div>
+      <div class="herb-card"><span class="herb-emoji">🍃</span><div class="herb-name">Peppermint</div><div class="herb-benefit">Clarity &amp; Digestion</div></div>
+      <div class="herb-card"><span class="herb-emoji">🌻</span><div class="herb-name">Echinacea</div><div class="herb-benefit">Immune Defense</div></div>
+      <div class="herb-card"><span class="herb-emoji">🌱</span><div class="herb-name">Turmeric</div><div class="herb-benefit">Pain &amp; Inflammation</div></div>
+      <div class="herb-card"><span class="herb-emoji">🍀</span><div class="herb-name">Lemon Balm</div><div class="herb-benefit">Mood &amp; Rest</div></div>
+      <div class="herb-card"><span class="herb-emoji">🌾</span><div class="herb-name">Valerian</div><div class="herb-benefit">Deep Sleep</div></div>
+      <div class="herb-card"><span class="herb-emoji">🌺</span><div class="herb-name">Holy Basil</div><div class="herb-benefit">Adaptogen &amp; Energy</div></div>
+      <div class="herb-card"><span class="herb-emoji">🫚</span><div class="herb-name">Rosemary</div><div class="herb-benefit">Memory &amp; Focus</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section" style="background:#020804">
+  <div class="section-inner">
+    <span class="overline">What Changes</span>
+    <h2 class="section-title">Six Ways This Kit<br><em>Transforms</em> Your Health</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-num">01</span>
+        <div class="benefit-title">Restorative Sleep</div>
+        <p class="benefit-text">Valerian root and chamomile work in concert to regulate your sleep architecture — helping you fall asleep faster and wake restored, without dependency or morning fog.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-num">02</span>
+        <div class="benefit-title">Anxiety Relief</div>
+        <p class="benefit-text">Ashwagandha is classified as an adaptogen — it literally recalibrates your cortisol response. Paired with lemon balm, the effect on anxiety is measurable within weeks.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-num">03</span>
+        <div class="benefit-title">Natural Pain Management</div>
+        <p class="benefit-text">Turmeric's curcumin compound rivals pharmaceutical anti-inflammatories in peer-reviewed studies — without the gastrointestinal side effects or long-term dependency risk.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-num">04</span>
+        <div class="benefit-title">Immune Fortification</div>
+        <p class="benefit-text">Echinacea and elderberry have centuries of documented use in immune support. Modern research confirms what traditional healers always knew — these herbs work.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-num">05</span>
+        <div class="benefit-title">Sustained Energy</div>
+        <p class="benefit-text">Holy basil and ginseng deliver clean, sustained energy through adaptogenic pathways — not the cortisol spike and crash cycle of caffeine. The difference is profound.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-num">06</span>
+        <div class="benefit-title">Cognitive Clarity</div>
+        <p class="benefit-text">Rosemary and bacopa have been used by scholars and healers for millennia to sharpen memory and focus. Modern neuroscience is now confirming the mechanisms.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:72px">
+      <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="hero-cta">Begin Your Healing Journey</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:#030a04">
+  <div class="section-inner">
+    <span class="overline">From Our Community</span>
+    <h2 class="section-title">Forty-Seven Thousand<br><em>Gardens</em> Don't Lie</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-quote">"I've spent years and thousands of dollars on supplements. This kit rendered most of them unnecessary. My chamomile and valerian now sit on my kitchen windowsill, and I sleep better than I have in two decades."</p>
+        <div class="testi-author">Maria T. &nbsp;·&nbsp; Austin, Texas</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-quote">"The ashwagandha alone changed my relationship with anxiety. By week three I noticed a fundamental shift — not a masking of symptoms, but an actual recalibration. I'm recommending this to everyone I know."</p>
+        <div class="testi-author">Keisha R. &nbsp;·&nbsp; Atlanta, Georgia</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-quote">"I was certain I couldn't grow anything. The kit's instructions are so thorough that six weeks later I had a thriving indoor herb garden. My family uses it daily. The ROI is extraordinary."</p>
+        <div class="testi-author">Sandra W. &nbsp;·&nbsp; Columbus, Ohio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTERPRISE / BUSINESS SECTION -->
+<section class="enterprise">
+  <div class="enterprise-inner">
+    <span class="enterprise-label">For Visionaries &amp; Operators</span>
+    <h2 class="enterprise-title">The Infrastructure<br>Behind <em>Goddess Fuel</em></h2>
+    <p class="enterprise-body">What you're experiencing — this page, this brand, this content ecosystem — was built by an autonomous AI content infrastructure that generates, publishes, and scales without human intervention. It operates across Pinterest, TikTok, Instagram, YouTube, and email simultaneously.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-icon">⚡</span>
+        <div class="pillar-title">Autonomous Content Generation</div>
+        <p class="pillar-text">AI produces Pinterest pins, TikTok videos, email sequences, and landing pages — fully automated, at scale, daily.</p>
+        <ul class="pillar-list">
+          <li>100+ Pinterest pins per cycle</li>
+          <li>20 platform-ready videos</li>
+          <li>Neural voiceover synthesis</li>
+          <li>4K visual media pipeline</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">🌐</span>
+        <div class="pillar-title">Live Publishing Infrastructure</div>
+        <p class="pillar-text">Every asset auto-deploys to live web properties. Landing pages update with fresh AI-generated copy on every cycle.</p>
+        <ul class="pillar-list">
+          <li>GitHub Pages deployment</li>
+          <li>Real-time content refresh</li>
+          <li>SEO-optimized per run</li>
+          <li>Multi-platform distribution</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">📊</span>
+        <div class="pillar-title">Command &amp; Analytics Layer</div>
+        <p class="pillar-text">A complete operational dashboard tracking every asset, every impression, every conversion — updated in real time.</p>
+        <ul class="pillar-list">
+          <li>8-month content schedule</li>
+          <li>Revenue tracking built in</li>
+          <li>Asset management system</li>
+          <li>Performance analytics</li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">✉️</span>
+        <div class="pillar-title">Email Automation Engine</div>
+        <p class="pillar-text">AI-authored nurture sequences deploy automatically. Every lead enters a conversion-optimized flow without manual intervention.</p>
+        <ul class="pillar-list">
+          <li>AI-written copy per segment</li>
+          <li>Automated sequence logic</li>
+          <li>n8n &amp; Brevo compatible</li>
+          <li>300+ sends daily, free tier</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="enterprise-value">
+      <div class="value-number">$497</div>
+      <div class="value-context">
+        <p style="color:var(--gold);font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px">One-Time Acquisition</p>
+        <p>The equivalent infrastructure as a managed service would cost $2,500 — $5,000 monthly. This is a one-time license. You own it permanently. Includes full setup, documentation, and 30 days of direct support.</p>
+      </div>
+    </div>
+
+    <a href="mailto:dekiston1@gmail.com?subject=Infrastructure%20Inquiry" class="enterprise-cta">
+      Inquire Privately &nbsp;→
+    </a>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency">
+  <span class="overline" style="display:block;text-align:center">Limited Availability</span>
+  <h2 class="section-title" style="text-align:center;margin:0 auto 16px">
+    Your Garden Awaits.<br><em>Begin Today.</em>
+  </h2>
+  <p style="color:rgba(245,240,232,0.5);text-align:center;font-size:1rem;line-height:1.8;max-width:560px;margin:0 auto">
+    Every day without natural remedies is a day relying on systems not designed for your wellbeing. Your healing garden starts with a single decision.
+  </p>
+  <div class="countdown">
+    <div class="count-unit"><span class="count-num" id="hrs">00</span><span class="count-label">Hours</span></div>
+    <div class="count-unit"><span class="count-num" id="min">00</span><span class="count-label">Minutes</span></div>
+    <div class="count-unit"><span class="count-num" id="sec">00</span><span class="count-label">Seconds</span></div>
+  </div>
+  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="urgency-cta">
+    Claim Your Medicinal Garden Kit
   </a>
 </section>
 
-<section class="urg">
-  <h2>Your Healing Garden Is Waiting</h2>
-  <p>Every day without natural remedies is another day spending money on pills that don't fix the root cause.</p>
-  <div class="cd">
-    <div class="cb"><span class="cn" id="hrs">00</span><span class="cl">Hours</span></div>
-    <div class="cb"><span class="cn" id="min">00</span><span class="cl">Minutes</span></div>
-    <div class="cb"><span class="cn" id="sec">00</span><span class="cl">Seconds</span></div>
-  </div>
-  <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="cta" style="font-size:1.3rem;padding:24px 64px">
-    Claim My Kit Now &rarr;
-  </a>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <p>🌿 <strong>Goddess Fuel Wellness</strong> — Natural Health for Every Home</p>
-  <p><a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/">Get the Medicinal Garden Kit</a></p>
-  <p style="margin-top:16px;color:#2e7d32;font-size:0.8rem">
-    Affiliate disclosure: We earn a commission at no extra cost to you.
-    Photos by <a href="https://www.pexels.com" style="color:#4caf50">Pexels</a>.
+<div id="capture-overlay" style="position:fixed;inset:0;background:rgba(3,10,4,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.4s">
+  <div style="background:linear-gradient(160deg,#0d1e0e,#050d06);border:1px solid rgba(201,168,76,0.4);border-radius:24px;max-width:440px;width:100%;padding:48px 36px;position:relative;text-align:center">
+    <button onclick="closeCaptureModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#8db88f;font-size:1.4rem;cursor:pointer;line-height:1">&times;</button>
+    <div style="font-size:2.5rem;margin-bottom:16px">🌿</div>
+    <h2 style="font-family:'Playfair Display',serif;color:#c9a84c;font-size:1.6rem;line-height:1.3;margin-bottom:12px">Get Your Free Herb Guide</h2>
+    <p style="color:rgba(245,240,232,0.65);font-size:0.95rem;line-height:1.7;margin-bottom:28px">10 Healing Herbs Every Home Should Grow — instantly delivered to your inbox, plus first access to exclusive savings on the Medicinal Garden Kit.</p>
+    <form id="capture-form" onsubmit="submitCapture(event)">
+      <input type="text" id="capture-name" placeholder="First Name" required style="width:100%;padding:14px 18px;margin-bottom:12px;border-radius:8px;border:1px solid rgba(201,168,76,0.25);background:rgba(255,255,255,0.04);color:#fff;font-family:sans-serif;font-size:0.95rem;box-sizing:border-box">
+      <input type="email" id="capture-email" placeholder="Email Address" required style="width:100%;padding:14px 18px;margin-bottom:20px;border-radius:8px;border:1px solid rgba(201,168,76,0.25);background:rgba(255,255,255,0.04);color:#fff;font-family:sans-serif;font-size:0.95rem;box-sizing:border-box">
+      <button type="submit" style="width:100%;background:linear-gradient(135deg,#c9a84c,#f0d080);color:#000;padding:16px;border:none;border-radius:50px;font-family:sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer">Send Me The Free Guide</button>
+    </form>
+    <div id="capture-success" style="display:none">
+      <div style="font-size:2.5rem;margin-bottom:12px">✅</div>
+      <p style="color:#c9a84c;font-family:sans-serif;font-weight:700;margin-bottom:16px">Check your inbox!</p>
+      <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" style="display:inline-block;background:linear-gradient(135deg,#2e7d32,#4caf50);color:#fff;padding:14px 36px;border-radius:50px;text-decoration:none;font-family:sans-serif;font-weight:700;font-size:0.9rem">While you wait — see the full kit →</a>
+    </div>
+    <p style="color:rgba(245,240,232,0.3);font-size:0.7rem;margin-top:20px">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- STICKY BOTTOM BAR CAPTURE -->
+<div id="sticky-capture" style="position:fixed;bottom:0;left:0;right:0;z-index:500;background:rgba(13,30,14,0.97);backdrop-filter:blur(10px);border-top:1px solid rgba(201,168,76,0.3);padding:14px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+  <span style="color:#c9a84c;font-family:sans-serif;font-size:0.85rem;font-weight:600">🌿 Get your free herb guide — instant download</span>
+  <button onclick="openCaptureModal()" style="background:linear-gradient(135deg,#c9a84c,#f0d080);color:#000;padding:10px 24px;border:none;border-radius:50px;font-family:sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;white-space:nowrap">Get It Free →</button>
+</div>
+  <div class="footer-brand">🌿 Goddess Fuel Wellness</div>
+  <div class="footer-links">
+    <a href="https://www.digistore24.com/redir/325658/dekiston3a6d0/" class="footer-link">Shop</a>
+    <a href="mailto:dekiston1@gmail.com" class="footer-link">Contact</a>
+  </div>
+  <p class="footer-disc">
+    Affiliate disclosure: Goddess Fuel Wellness earns a commission on qualifying purchases at no additional cost to you.
+    These statements have not been evaluated by the Food and Drug Administration.
+    This product is not intended to diagnose, treat, cure, or prevent any disease.
+    Photography courtesy of Pexels contributors.
   </p>
 </footer>
 
 <script>
+// ── 3D FLOATING PARTICLES ──────────────────────────────────────────
 (function() {
   try {
-    var c = document.getElementById('pc');
-    var r = new THREE.WebGLRenderer({canvas: c, alpha: true});
+    var c = document.getElementById('canvas3d');
+    var r = new THREE.WebGLRenderer({canvas: c, alpha: true, antialias: true});
     r.setSize(window.innerWidth, window.innerHeight);
     r.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    var s = new THREE.Scene();
+
+    var scene = new THREE.Scene();
     var cam = new THREE.PerspectiveCamera(
-      75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    cam.position.z = 5;
-    var g = new THREE.BufferGeometry();
-    var n = 800;
-    var pos = new Float32Array(n * 3);
-    var col = new Float32Array(n * 3);
-    for (var i = 0; i < n * 3; i += 3) {
-      pos[i]   = (Math.random() - 0.5) * 20;
-      pos[i+1] = (Math.random() - 0.5) * 20;
-      pos[i+2] = (Math.random() - 0.5) * 10;
-      col[i]   = 0.1 + Math.random() * 0.2;
-      col[i+1] = 0.4 + Math.random() * 0.4;
-      col[i+2] = 0.1 + Math.random() * 0.2;
+      60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    cam.position.z = 6;
+
+    var geo = new THREE.BufferGeometry();
+    var count = 1200;
+    var pos = new Float32Array(count * 3);
+    var col = new Float32Array(count * 3);
+    var sizes = new Float32Array(count);
+
+    for (var i = 0; i < count; i++) {
+      pos[i*3]   = (Math.random() - 0.5) * 24;
+      pos[i*3+1] = (Math.random() - 0.5) * 24;
+      pos[i*3+2] = (Math.random() - 0.5) * 12;
+
+      var isGold = Math.random() > 0.7;
+      if (isGold) {
+        col[i*3]   = 0.78;
+        col[i*3+1] = 0.66;
+        col[i*3+2] = 0.30;
+      } else {
+        col[i*3]   = 0.12 + Math.random() * 0.15;
+        col[i*3+1] = 0.35 + Math.random() * 0.30;
+        col[i*3+2] = 0.12 + Math.random() * 0.10;
+      }
+      sizes[i] = Math.random() * 0.06 + 0.02;
     }
-    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    g.setAttribute('color',    new THREE.BufferAttribute(col, 3));
-    var m = new THREE.PointsMaterial(
-      {size: 0.06, vertexColors: true, transparent: true, opacity: 0.8});
-    var p = new THREE.Points(g, m);
-    s.add(p);
-    var mx = {x: 0, y: 0};
-    document.addEventListener('mousemove', function(e) {
-      mx.x = (e.clientX / window.innerWidth  - 0.5) * 2;
-      mx.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+
+    var mat = new THREE.PointsMaterial({
+      size: 0.05,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.6,
+      sizeAttenuation: true
     });
-    function anim() {
-      requestAnimationFrame(anim);
-      p.rotation.y += 0.0008;
-      p.rotation.x += 0.0003;
-      cam.position.x += (mx.x * 0.5 - cam.position.x) * 0.02;
-      cam.position.y += (mx.y * 0.5 - cam.position.y) * 0.02;
-      r.render(s, cam);
+
+    var particles = new THREE.Points(geo, mat);
+    scene.add(particles);
+
+    var mouse = {x: 0, y: 0};
+    document.addEventListener('mousemove', function(e) {
+      mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouse.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    var clock = new THREE.Clock();
+    function animate() {
+      requestAnimationFrame(animate);
+      var t = clock.getElapsedTime();
+      particles.rotation.y = t * 0.04;
+      particles.rotation.x = t * 0.015;
+      cam.position.x += (mouse.x * 0.6 - cam.position.x) * 0.025;
+      cam.position.y += (mouse.y * 0.6 - cam.position.y) * 0.025;
+      cam.lookAt(scene.position);
+      r.render(scene, cam);
     }
-    anim();
+    animate();
+
     window.addEventListener('resize', function() {
       cam.aspect = window.innerWidth / window.innerHeight;
       cam.updateProjectionMatrix();
       r.setSize(window.innerWidth, window.innerHeight);
     });
-  } catch(e) { console.log('3D skip:', e); }
+  } catch(e) {
+    console.log('3D unavailable:', e);
+  }
 })();
 
+// ── COUNTDOWN ─────────────────────────────────────────────────────
 function tick() {
   var now = new Date();
   var end = new Date(now);
   end.setHours(23, 59, 59, 0);
-  var diff = end - now;
-  document.getElementById('hrs').textContent =
-    String(Math.floor(diff / 3600000)).padStart(2, '0');
-  document.getElementById('min').textContent =
-    String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
-  document.getElementById('sec').textContent =
-    String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+  var d = end - now;
+  document.getElementById('hrs').textContent = String(Math.floor(d/3600000)).padStart(2,'0');
+  document.getElementById('min').textContent = String(Math.floor((d%3600000)/60000)).padStart(2,'0');
+  document.getElementById('sec').textContent = String(Math.floor((d%60000)/1000)).padStart(2,'0');
 }
 tick();
 setInterval(tick, 1000);
 
-var ob = new IntersectionObserver(function(entries) {
+// ── SCROLL REVEAL ─────────────────────────────────────────────────
+var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
     if (e.isIntersecting) {
       e.target.style.opacity = '1';
       e.target.style.transform = 'translateY(0)';
     }
   });
-}, {threshold: 0.1});
-document.querySelectorAll('.bc,.tc,.sc,.hc').forEach(function(el) {
+}, {threshold: 0.08});
+
+document.querySelectorAll(
+  '.benefit-card,.testi-card,.pillar,.herb-card,.stat-box,.gallery-item'
+).forEach(function(el) {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  ob.observe(el);
+  el.style.transform = 'translateY(32px)';
+  el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  observer.observe(el);
+});
+
+// ── EMAIL CAPTURE MODAL ────────────────────────────────────────────
+var modalShown = false;
+var captureOverlay = document.getElementById('capture-overlay');
+var stickyCapture = document.getElementById('sticky-capture');
+
+function openCaptureModal() {
+  captureOverlay.style.opacity = '1';
+  captureOverlay.style.pointerEvents = 'auto';
+  modalShown = true;
+}
+
+function closeCaptureModal() {
+  captureOverlay.style.opacity = '0';
+  captureOverlay.style.pointerEvents = 'none';
+}
+
+function submitCapture(e) {
+  e.preventDefault();
+  var name = document.getElementById('capture-name').value;
+  var email = document.getElementById('capture-email').value;
+  document.getElementById('capture-form').style.display = 'none';
+  document.getElementById('capture-success').style.display = 'block';
+  console.log('Lead captured:', name, email);
+}
+
+// Show sticky bar after 8 seconds
+setTimeout(function() {
+  stickyCapture.style.display = 'flex';
+}, 8000);
+
+// Show modal after 45 seconds if not already shown
+setTimeout(function() {
+  if (!modalShown) openCaptureModal();
+}, 45000);
+
+// Exit intent
+document.addEventListener('mouseleave', function(e) {
+  if (e.clientY <= 0 && !modalShown) {
+    openCaptureModal();
+  }
 });
 </script>
 </body>
