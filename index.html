@@ -877,17 +877,29 @@ function submitCapture(e){
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  try {
-    var leads = JSON.parse(localStorage.getItem('gf_leads') || '[]');
-    leads.push({ email: email, first_name: firstName, date: new Date().toISOString() });
-    localStorage.setItem('gf_leads', JSON.stringify(leads));
-  } catch(err){}
+  var formData = new FormData();
+  formData.append('entry.1140200142', email);
+  formData.append('entry.1310552454', firstName);
 
-  document.getElementById('capture-form').style.display = 'none';
-  document.getElementById('capture-success').style.display = 'block';
-  setTimeout(function(){
-    window.location.href = "https://www.digistore24.com/redir/325658/dekiston3a6d0/";
-  }, 4000);
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLScuYoEVgYveDELz5d2FXOmNAPRuSxi4sJwv3M_CRgkeMVbvvA/formResponse', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  })
+  .then(function(){
+    document.getElementById('capture-form').style.display = 'none';
+    document.getElementById('capture-success').style.display = 'block';
+    setTimeout(function(){
+      window.location.href = "https://www.digistore24.com/redir/325658/dekiston3a6d0/";
+    }, 4000);
+  })
+  .catch(function(){
+    document.getElementById('capture-form').style.display = 'none';
+    document.getElementById('capture-success').style.display = 'block';
+    setTimeout(function(){
+      window.location.href = "https://www.digistore24.com/redir/325658/dekiston3a6d0/";
+    }, 4000);
+  });
 }
 
 // Show sticky bar after scrolling 25%
