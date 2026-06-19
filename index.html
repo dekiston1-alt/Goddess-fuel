@@ -133,61 +133,6 @@
             transform: scale(0.98);
         }
         
-        /* === EMAIL FORM === */
-        .email-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 400px;
-            margin: 20px auto;
-        }
-        
-        .email-form input {
-            padding: clamp(14px, 2vh, 18px) clamp(16px, 3vw, 20px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            font-size: clamp(0.95em, 2vw, 1.05em);
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--color-text);
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
-        
-        .email-form input::placeholder {
-            color: var(--color-text-muted);
-        }
-        
-        .email-form input:focus {
-            outline: none;
-            border-color: var(--color-accent);
-            box-shadow: 0 0 12px rgba(232, 160, 32, 0.3);
-            background: #fff;
-        }
-        
-        .email-form button {
-            padding: clamp(14px, 2vh, 18px) clamp(28px, 4vw, 40px);
-            background: var(--color-accent);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: clamp(1em, 3vw, 1.15em);
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 16px rgba(232, 160, 32, 0.3);
-        }
-        
-        .email-form button:hover {
-            background: #d68a1a;
-            box-shadow: 0 6px 20px rgba(232, 160, 32, 0.4);
-            transform: translateY(-2px);
-        }
-        
-        .email-form button:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 8px rgba(232, 160, 32, 0.2);
-        }
-        
         /* === CONTENT SECTIONS === */
         .section {
             max-width: 900px;
@@ -351,20 +296,6 @@
                 padding: 16px 20px;
                 font-size: 1em;
                 margin: 8px 0;
-                border-radius: 6px;
-            }
-            
-            .email-form {
-                max-width: 100%;
-                margin: 16px 0;
-            }
-            
-            .email-form input,
-            .email-form button {
-                width: 100%;
-                font-size: 1em;
-                padding: 16px;
-                margin: 4px 0;
                 border-radius: 6px;
             }
             
